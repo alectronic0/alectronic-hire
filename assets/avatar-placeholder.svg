@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="avatarTitle">
+  <title id="avatarTitle">Placeholder headshot photo</title>
+  <circle cx="100" cy="100" r="100" fill="#101317"/>
+  <circle cx="100" cy="100" r="97" fill="none" stroke="#7EC8E3" stroke-width="3"/>
+  <text x="100" y="122" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="72" font-weight="700" fill="#7EC8E3" text-anchor="middle">AD</text>
+</svg>
