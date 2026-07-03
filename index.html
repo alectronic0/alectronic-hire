@@ -1,707 +1,904 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alec Doran-Twyford — Senior Software Engineer</title>
-  <style>
-    :root {
-      --bg: #0c0c0f;
-      --surface: #13131a;
-      --surface-2: #1c1c27;
-      --border: #2a2a3a;
-      --text: #e8e8f0;
-      --text-muted: #8888a8;
-      --accent: #c8c8e8;
-      --accent-dim: #5a5a7a;
-      --tag-bg: #1e1e2e;
-      --tag-border: #3a3a5a;
-      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-      --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alec Doran-Twyford — Senior Software Engineer | Hire Me</title>
+<meta name="description" content="Alec Doran-Twyford is a Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire. Previously at Rightmove, Solirius, HMPPS and Sky. Open to new opportunities.">
+<link rel="canonical" href="https://hire.alectronic.co/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://hire.alectronic.co/">
+<meta property="og:site_name" content="Hire Alec">
+<meta property="og:title" content="Alec Doran-Twyford — Senior Software Engineer">
+<meta property="og:description" content="Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire. Previously at Rightmove, Solirius, HMPPS and Sky.">
+<meta property="og:image" content="https://hire.alectronic.co/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alec Doran-Twyford, Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alec Doran-Twyford — Senior Software Engineer">
+<meta name="twitter:description" content="Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire. Previously at Rightmove, Solirius, HMPPS and Sky.">
+<meta name="twitter:image" content="https://hire.alectronic.co/assets/og-image.png">
+<meta name="twitter:image:alt" content="Alec Doran-Twyford, Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire">
+
+<!-- [PLACEHOLDER: swap assets/og-image.png for a real photo/banner when you have one, keep it 1200x630] -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000'/%3E%3Ctext x='50' y='68' font-size='52' font-family='system-ui,sans-serif' font-weight='700' fill='%237EC8E3' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root {
+    --bg: #050607;
+    --bg-alt: #0c0e10;
+    --card: #101317;
+    --card-hover: #161a1f;
+    --border: rgba(255, 255, 255, 0.10);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --text: #f5f5f7;
+    --text-muted: #a8adb4;
+    --accent: #7EC8E3;
+    --accent-dark: #4fa8c6;
+    --accent-wash: rgba(126, 200, 227, 0.12);
+    --radius: 16px;
+    --max-width: 1080px;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 76px;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  h1, h2, h3 { line-height: 1.25; font-weight: 800; letter-spacing: -0.02em; }
+
+  p {
+    color: var(--text-muted);
+    max-width: 60ch;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  a:hover { color: var(--accent-dark); }
+
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--accent);
+    color: #000;
+    padding: 12px 20px;
+    font-weight: 700;
+    z-index: 1000;
+    border-radius: 0 0 8px 0;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Nav */
+  header.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 6, 7, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-links::-webkit-scrollbar { display: none; }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    white-space: nowrap;
+    border-radius: 8px;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+    background: var(--accent-wash);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+  }
+
+  .btn-primary:hover { background: var(--accent-dark); color: #000; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border-strong);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .btn-large {
+    font-size: 1.2rem;
+    padding: 18px 40px;
+  }
+
+  /* Sections */
+  section {
+    padding: 88px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 76px;
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  h2.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin: 0 0 10px;
+  }
+
+  .title-underline {
+    width: 64px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 3px;
+    margin: 0 0 32px;
+  }
+
+  .section-intro {
+    max-width: 60ch;
+    margin-bottom: 36px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .hero-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-content { flex: 1; min-width: 280px; }
+
+  .hero-wave { font-size: 1.4rem; margin-bottom: 6px; }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 6vw, 3.4rem);
+    margin: 0 0 6px;
+  }
+
+  .hero .role {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .hero .location {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .hero .pitch {
+    font-size: 1.15rem;
+    color: var(--text);
+    max-width: 56ch;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* About */
+  .about-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    max-width: 720px;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .skill-card h3 {
+    font-size: 1.05rem;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--accent-wash);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+
+  /* Experience timeline */
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border-strong);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--accent);
+  }
+
+  .timeline-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .timeline-company {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .timeline-dates {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .timeline-role {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+  }
+
+  .timeline-bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .timeline-bullets li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .timeline-bullets li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .placeholder {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  /* Projects */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .project-field-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin: 6px 0 2px;
+  }
+
+  .project-field-value {
+    color: var(--text);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  .project-impact {
+    display: inline-block;
+    margin-top: 8px;
+    align-self: flex-start;
+    background: var(--accent-wash);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+
+  .project-card.github {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .project-card.github a.btn { margin-top: 6px; }
+
+  /* Beyond code */
+  .beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .beyond-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 16px;
+    text-align: center;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .beyond-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .beyond-emoji {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .beyond-card p {
+    margin: 0;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* Contact */
+  .contact-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 32px;
+    text-align: center;
+  }
+
+  .contact-box p {
+    margin: 0 auto 28px;
+    max-width: 48ch;
+    font-size: 1.05rem;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .contact-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .contact-links a:hover { color: var(--accent); }
+
+  /* Footer */
+  footer {
+    padding: 32px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  footer a { color: var(--text-muted); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    section { padding: 64px 0; }
+    .hero { padding: 64px 0 56px; }
+    .hero-inner { gap: 28px; }
+    .hero-avatar { width: 100px; height: 100px; }
+    .timeline-header { flex-direction: column; gap: 2px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+    .btn:hover, .skill-card:hover, .project-card:hover, .beyond-card:hover {
+      transform: none;
     }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Layout */
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 64px 0 48px;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .name {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text);
-      line-height: 1.1;
-    }
-
-    .title {
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-      letter-spacing: 0.02em;
-    }
-
-    .title span {
-      color: var(--accent);
-    }
-
-    .location {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      text-align: right;
-    }
-
-    .contact-links a {
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 6px;
-    }
-
-    .contact-links a:hover { color: var(--accent); text-decoration: none; }
-
-    .contact-links .icon { font-size: 0.9rem; }
-
-    /* Nav */
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-    }
-
-    .nav-inner {
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .nav-inner::-webkit-scrollbar { display: none; }
-
-    nav a {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      padding: 14px 20px;
-      white-space: nowrap;
-      border-bottom: 2px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    nav a:hover {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom-color: var(--accent-dim);
-    }
-
-    /* Sections */
-    section {
-      padding: 56px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section:last-of-type { border-bottom: none; }
-
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--accent-dim);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      max-width: 620px;
-    }
-
-    /* Profile */
-    .profile-text {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--text);
-      max-width: 620px;
-    }
-
-    .open-to-work {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 10px 16px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin-top: 20px;
-    }
-
-    .open-to-work::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #4caf50;
-      flex-shrink: 0;
-    }
-
-    /* Skills */
-    .skill-groups {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .skill-group-label {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      background: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      border-radius: 4px;
-      padding: 4px 10px;
-      color: var(--text-muted);
-    }
-
-    .tag.primary {
-      border-color: var(--accent-dim);
-      color: var(--accent);
-    }
-
-    /* Experience */
-    .exp-list {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 4px 24px;
-      align-items: start;
-    }
-
-    .exp-company {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .exp-role {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .exp-period {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-dim);
-      white-space: nowrap;
-      text-align: right;
-    }
-
-    .exp-desc {
-      grid-column: 1 / -1;
-      margin-top: 12px;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .exp-bullets li {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .exp-bullets li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent-dim);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-    }
-
-    .exp-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 12px;
-    }
-
-    /* Projects */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-    }
-
-    .project-card:hover {
-      border-color: var(--accent-dim);
-    }
-
-    .project-name {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .project-detail {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .project-impact {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      background: var(--surface-2);
-      border: 1px solid var(--tag-border);
-      border-radius: 4px;
-      padding: 3px 8px;
-      margin-top: 10px;
-      color: var(--accent);
-    }
-
-    /* Education */
-    .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .edu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .edu-name {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .edu-detail {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .edu-year {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent-dim);
-      white-space: nowrap;
-    }
-
-    /* Footer */
-    footer {
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-
-    .footer-links a {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .footer-links a:hover { color: var(--accent); text-decoration: none; }
-
-    .footer-note {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--accent-dim);
-    }
-
-    /* Print */
-    @media print {
-      body { background: white; color: #111; }
-      nav { display: none; }
-      header { padding: 24px 0; }
-      .name { color: #111; font-size: 1.8rem; }
-      .tag, .project-card { border-color: #ccc; }
-      section { padding: 28px 0; }
-    }
-
-    @media (max-width: 600px) {
-      .header-inner { flex-direction: column; }
-      .contact-links { text-align: left; }
-      .contact-links a { justify-content: flex-start; }
-      .exp-item { grid-template-columns: 1fr; }
-      .exp-period { text-align: left; }
-      .project-grid { grid-template-columns: 1fr; }
-      .name { font-size: 1.7rem; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div class="header-inner">
-      <div>
-        <div class="name">Alec Doran-Twyford</div>
-        <div class="title">Senior Full-stack Software Engineer <span>@ Deliveroo</span></div>
-        <div class="location">📍 Welwyn Garden City, United Kingdom</div>
-        <div class="open-to-work">Open to Software Engineer &amp; Full-stack Engineer roles</div>
-      </div>
-      <div class="contact-links">
-        <a href="mailto:alec.dorantwyford@alectronic.co.uk">
-          <span class="icon">✉</span> alec.dorantwyford@alectronic.co.uk
-        </a>
-        <a href="https://linkedin.com/in/alectronic0" target="_blank" rel="noopener">
-          <span class="icon">in</span> linkedin.com/in/alectronic0
-        </a>
-        <a href="https://github.com/alectronic0" target="_blank" rel="noopener">
-          <span class="icon">⌥</span> github.com/alectronic0
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#profile">Profile</a>
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#hero">Alec<span>.</span>Dev</a>
+    <nav class="nav-links" aria-label="Section navigation">
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-    </div>
+      <a href="#beyond">Beyond Code</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main>
-  <div class="container">
+<main id="main">
 
-    <section id="profile">
-      <div class="section-label">// about</div>
-      <p class="profile-text">
-        A well-rounded engineer with impeccable work ethics and a friendly can-do attitude. I build consumer-focused products that make the world a better place — operating across the full stack as roughly 75% Software Engineer, 10% Product Manager, 10% Technical Architect, and 5% DevOps.
-      </p>
-      <p class="profile-text" style="margin-top: 16px;">
-        I prefer strongly typed languages and bring a cross-functional mindset to every team I join: deep technical ownership, stakeholder collaboration, and a habit of leaving codebases better than I found them.
-      </p>
-    </section>
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <img class="hero-avatar" src="assets/avatar-placeholder.svg" alt="[PLACEHOLDER: replace with a real photo of Alec Doran-Twyford]">
+      <div class="hero-content">
+        <div class="hero-wave" aria-hidden="true">👋</div>
+        <h1>Alec Doran-Twyford</h1>
+        <div class="role">Senior Software Engineer</div>
+        <div class="location">📍 Welwyn Garden City, Hertfordshire</div>
+        <p class="pitch">I build reliable, high-scale software and enjoy turning tricky problems into simple, well-tested systems. Currently at Deliveroo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View my work</a>
+          <a class="btn btn-secondary" href="mailto:alec@alectronic.co">Email me</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="skills">
-      <div class="section-label">// skills</div>
-      <div class="skill-groups">
-        <div>
-          <div class="skill-group-label">primary languages</div>
+  <section id="about">
+    <div class="container">
+      <div class="eyebrow">🙋 About</div>
+      <h2 class="section-title">A bit about me</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+      <div class="about-card">
+        <p>[PLACEHOLDER: I'm a Senior Software Engineer at Deliveroo, working on high-scale systems that millions of people use every day.] [PLACEHOLDER: I care about writing clean, well-tested code and about the people I build it with.] [PLACEHOLDER: Outside of the day job, I like picking up new tools and side projects.] [PLACEHOLDER: I'm currently open to hearing about new opportunities.]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="eyebrow">🛠️ Skills</div>
+      <h2 class="section-title">What I work with</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3><span aria-hidden="true">💻</span> Languages</h3>
           <div class="tags">
-            <span class="tag primary">Go</span>
-            <span class="tag primary">TypeScript</span>
-            <span class="tag primary">Java</span>
-            <span class="tag primary">Ruby</span>
-            <span class="tag">JavaScript</span>
+            <span class="tag">Java</span>
+            <span class="tag">Go</span>
+            <span class="tag">Ruby</span>
+            <span class="tag">TypeScript</span>
           </div>
         </div>
-        <div>
-          <div class="skill-group-label">frontend</div>
-          <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">GraphQL</span>
-          </div>
-        </div>
-        <div>
-          <div class="skill-group-label">backend &amp; infra</div>
+
+        <div class="skill-card">
+          <h3><span aria-hidden="true">🧩</span> Backend &amp; Microservices</h3>
           <div class="tags">
             <span class="tag">Spring Boot</span>
             <span class="tag">Ruby on Rails</span>
+            <span class="tag">gRPC</span>
+            <span class="tag">Kafka</span>
             <span class="tag">Postgres</span>
             <span class="tag">Redis</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">gRPC</span>
-            <span class="tag">Protobuf</span>
-            <span class="tag">Elasticsearch</span>
           </div>
         </div>
-        <div>
-          <div class="skill-group-label">tooling &amp; practices</div>
+
+        <div class="skill-card">
+          <h3><span aria-hidden="true">☁️</span> Cloud &amp; Infra</h3>
           <div class="tags">
+            <span class="tag">AWS</span>
+            <span class="tag">Kubernetes</span>
             <span class="tag">Docker</span>
             <span class="tag">Terraform</span>
-            <span class="tag">CircleCI</span>
-            <span class="tag">Jenkins</span>
-            <span class="tag">Microservices</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3><span aria-hidden="true">🤝</span> Ways of Working</h3>
+          <div class="tags">
+            <span class="tag">Agile / Scrum</span>
             <span class="tag">TDD</span>
-            <span class="tag">Scrum / Agile</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-label">// experience</div>
-      <div class="exp-list">
-
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">Deliveroo</div>
-            <div class="exp-role">Senior Full-stack Software Engineer · Pricing Team</div>
-          </div>
-          <div class="exp-period">Mar 2021 – Present</div>
-          <div class="exp-desc">
-            <p>Core member of the pricing team, delivering profitability initiatives since IPO. Working across Go, Ruby, and TypeScript in a high-scale microservices environment.</p>
-            <ul class="exp-bullets">
-              <li>Lead the refactoring of our core fee calculation system — reduced latency by 50% via caching and parallelism</li>
-              <li>Architected and built the internal Pricing Levers platform, cutting time-to-market for pricing changes from days to minutes</li>
-              <li>Implemented cross-team consumer features improving the end-to-end fees experience</li>
-              <li>Managed oncall onboarding for new engineers across the team</li>
-            </ul>
-            <div class="exp-stack">
-              <span class="tag">Go</span>
-              <span class="tag">Ruby on Rails</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Next.js</span>
-              <span class="tag">React</span>
-              <span class="tag">Postgres</span>
-              <span class="tag">Redis</span>
-              <span class="tag">Kafka</span>
-              <span class="tag">gRPC</span>
-              <span class="tag">Terraform</span>
-              <span class="tag">CircleCI</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">Rightmove</div>
-            <div class="exp-role">Full-stack Software Engineer</div>
-          </div>
-          <div class="exp-period">Nov 2018 – Mar 2021</div>
-          <div class="exp-desc">
-            <p>UK's largest property portal. Worked on core pages reaching millions of users monthly.</p>
-            <ul class="exp-bullets">
-              <li>Replatformed the Property Details page using Spring Boot, React.js, and GraphQL</li>
-              <li>Replatformed the Sold Property search page and migrated to a new Elasticsearch model</li>
-              <li>Committee member on Kanso, Rightmove's internal React component library</li>
-              <li>Mentored and pair-programmed frontend and backend engineers toward full-stack capability</li>
-            </ul>
-            <div class="exp-stack">
-              <span class="tag">Java 11</span>
-              <span class="tag">Spring Boot</span>
-              <span class="tag">React</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">GraphQL</span>
-              <span class="tag">Elasticsearch</span>
-              <span class="tag">Kafka</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Jenkins</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <div>
-            <div class="exp-company">Solirius Consulting</div>
-            <div class="exp-role">Software Engineer</div>
-          </div>
-          <div class="exp-period">Sep 2016 – Nov 2018</div>
-          <div class="exp-desc">
-            <p>Technology consulting firm serving public and private sector clients across the UK.</p>
-            <ul class="exp-bullets">
-              <li>Technical Lead and Scrum Leader on multiple client projects</li>
-              <li>Designed and implemented solutions across Java, Spring Boot, Angular, and React</li>
-              <li>Rapidly adopted new technologies to fit project requirements</li>
-            </ul>
-            <div class="exp-stack">
-              <span class="tag">Java 8</span>
-              <span class="tag">Spring Boot</span>
-              <span class="tag">Angular</span>
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">ELK Stack</span>
-              <span class="tag">Ansible</span>
-              <span class="tag">Terraform</span>
-            </div>
+            <span class="tag">Code Review</span>
+            <span class="tag">Mentoring</span>
+            <span class="tag">Cross-team Collaboration</span>
           </div>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects">
-      <div class="section-label">// major projects</div>
+  <section id="experience">
+    <div class="container">
+      <div class="eyebrow">📈 Experience</div>
+      <h2 class="section-title">Where I've worked</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+
+      <ol class="timeline">
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company">Deliveroo</span>
+              <span class="timeline-dates">[PLACEHOLDER: start date] – Present</span>
+            </div>
+            <div class="timeline-role">Senior Software Engineer</div>
+            <ul class="timeline-bullets">
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. led a project that improved X by Y%]</li>
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. built a system that reduced Z]</li>
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. mentored engineers / led on-call practices]</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company">Rightmove</span>
+              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
+            </div>
+            <div class="timeline-role">Software Engineer</div>
+            <ul class="timeline-bullets">
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. replatformed a key customer-facing page]</li>
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. contributed to internal component library]</li>
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. improved performance/reliability metric]</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company">Solirius Consulting</span>
+              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
+            </div>
+            <div class="timeline-role">Software Engineer</div>
+            <ul class="timeline-bullets">
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. delivered client project as technical lead]</li>
+              <li class="placeholder">[PLACEHOLDER: achievement — e.g. adopted new technology to meet client needs]</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company">HMPPS</span>
+              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
+            </div>
+            <div class="timeline-role">[PLACEHOLDER: job title]</div>
+            <ul class="timeline-bullets">
+              <li class="placeholder">[PLACEHOLDER: achievement]</li>
+              <li class="placeholder">[PLACEHOLDER: achievement]</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <span class="timeline-company">Sky</span>
+              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
+            </div>
+            <div class="timeline-role">[PLACEHOLDER: job title]</div>
+            <ul class="timeline-bullets">
+              <li class="placeholder">[PLACEHOLDER: achievement]</li>
+              <li class="placeholder">[PLACEHOLDER: achievement]</li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="eyebrow">🚀 Projects</div>
+      <h2 class="section-title">Things I've built</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+
       <div class="project-grid">
 
         <div class="project-card">
-          <div class="project-name">Consumer Fees Enhancements</div>
-          <div class="project-detail">Lead the refactoring and enhancement of Deliveroo's core fee calculation system. Isolated complex logic for testing and improved overall code readability.</div>
-          <div class="project-impact">50% latency reduction</div>
+          <h3>[PLACEHOLDER: Rightmove project name]</h3>
+          <p class="project-field-label">Problem</p>
+          <p class="project-field-value">[PLACEHOLDER: what problem was this solving?]</p>
+          <p class="project-field-label">What I built</p>
+          <p class="project-field-value">[PLACEHOLDER: describe what you built]</p>
+          <p class="project-field-label">Tech used</p>
+          <p class="project-field-value">[PLACEHOLDER: e.g. Java, Spring Boot, React, GraphQL]</p>
+          <span class="project-impact">[PLACEHOLDER: impact / metric]</span>
         </div>
 
         <div class="project-card">
-          <div class="project-name">Pricing Levers Platform</div>
-          <div class="project-detail">Architected and built an internal tooling platform for pricing configuration. Removed the need for engineer involvement in routine pricing changes.</div>
-          <div class="project-impact">Days → minutes time-to-market</div>
+          <h3>[PLACEHOLDER: Rightmove project name]</h3>
+          <p class="project-field-label">Problem</p>
+          <p class="project-field-value">[PLACEHOLDER: what problem was this solving?]</p>
+          <p class="project-field-label">What I built</p>
+          <p class="project-field-value">[PLACEHOLDER: describe what you built]</p>
+          <p class="project-field-label">Tech used</p>
+          <p class="project-field-value">[PLACEHOLDER: e.g. Elasticsearch, Java, Kafka]</p>
+          <span class="project-impact">[PLACEHOLDER: impact / metric]</span>
         </div>
 
         <div class="project-card">
-          <div class="project-name">Property Details Page</div>
-          <div class="project-detail">Replatformed Rightmove's core property details page from a legacy solution using Spring Boot, React.js, and GraphQL.</div>
-          <div class="project-impact">rightmove.co.uk/properties/...</div>
+          <h3>[PLACEHOLDER: Rightmove project name]</h3>
+          <p class="project-field-label">Problem</p>
+          <p class="project-field-value">[PLACEHOLDER: what problem was this solving?]</p>
+          <p class="project-field-label">What I built</p>
+          <p class="project-field-value">[PLACEHOLDER: describe what you built]</p>
+          <p class="project-field-label">Tech used</p>
+          <p class="project-field-value">[PLACEHOLDER: e.g. TypeScript, React, Node.js]</p>
+          <span class="project-impact">[PLACEHOLDER: impact / metric]</span>
         </div>
 
-        <div class="project-card">
-          <div class="project-name">Sold Property Page</div>
-          <div class="project-detail">Replatformed the sold property search results page and migrated the underlying Elasticsearch index to a new model.</div>
-          <div class="project-impact">rightmove.co.uk/house-prices/</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-name">Kanso Component Library</div>
-          <div class="project-detail">Committee member on Rightmove's internal React component library. Identified reusable components and prioritised their development across teams.</div>
-          <div class="project-impact">Cross-team design system</div>
+        <div class="project-card github">
+          <h3><span aria-hidden="true">🐙</span> More on GitHub</h3>
+          <p class="project-field-value">Check out my personal and open-source projects, experiments, and code samples.</p>
+          <a class="btn btn-secondary" href="https://github.com/alectronic0" target="_blank" rel="noopener">
+            github.com/alectronic0
+          </a>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="education">
-      <div class="section-label">// education &amp; certs</div>
-      <div class="edu-list">
-
-        <div class="edu-item">
-          <div>
-            <div class="edu-name">University of Hertfordshire</div>
-            <div class="edu-detail">BSc (Hons) Computer Science · First Class · Cisco CCNA 1–4 · Oracle Database 11g SQL</div>
-          </div>
-          <div class="edu-year">2012</div>
+  <section id="beyond">
+    <div class="container">
+      <div class="eyebrow">🌿 Beyond Code</div>
+      <h2 class="section-title">When I'm not coding</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+      <div class="beyond-grid">
+        <div class="beyond-card">
+          <div class="beyond-emoji" aria-hidden="true">📷</div>
+          <p>Photography</p>
         </div>
-
-        <div class="edu-item">
-          <div>
-            <div class="edu-name">Scrum Alliance</div>
-            <div class="edu-detail">Certified ScrumMaster® (CSM®)</div>
-          </div>
-          <div class="edu-year">2020</div>
+        <div class="beyond-card">
+          <div class="beyond-emoji" aria-hidden="true">🍵</div>
+          <p>Food &amp; Tea</p>
         </div>
-
-        <div class="edu-item">
-          <div>
-            <div class="edu-name">General Assembly, Sydney</div>
-            <div class="edu-detail">Product Management · Completed</div>
-          </div>
-          <div class="edu-year">2014</div>
+        <div class="beyond-card">
+          <div class="beyond-emoji" aria-hidden="true">🚴</div>
+          <p>Cycling</p>
         </div>
-
+        <div class="beyond-card">
+          <div class="beyond-emoji" aria-hidden="true">🐉</div>
+          <p>D&amp;D</p>
+        </div>
+        <div class="beyond-card">
+          <div class="beyond-emoji" aria-hidden="true">🎲</div>
+          <p>Board Games</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
+  <section id="contact">
+    <div class="container">
+      <div class="eyebrow">📬 Contact</div>
+      <h2 class="section-title">Let's talk</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+      <div class="contact-box">
+        <p>I'm open to hearing about new opportunities. The quickest way to reach me is by email — I'll get back to you as soon as I can.</p>
+        <a class="btn btn-primary btn-large" href="mailto:alec@alectronic.co">✉️ alec@alectronic.co</a>
+        <div class="contact-links">
+          <a href="https://github.com/alectronic0" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://linkedin.com/in/alectronic0" target="_blank" rel="noopener">[PLACEHOLDER: confirm LinkedIn URL] LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
   <div class="container">
-    <div class="footer-links">
-      <a href="mailto:alec.dorantwyford@alectronic.co.uk">Email</a>
-      <a href="https://linkedin.com/in/alectronic0" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/alectronic0" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linktr.ee/Alectronic" target="_blank" rel="noopener">Linktree</a>
-    </div>
-    <div class="footer-note">alec.dorantwyford@alectronic.co.uk · Welwyn Garden City, UK</div>
+    <p>&copy; 2026 Alec Doran-Twyford · Welwyn Garden City, Hertfordshire · <a href="mailto:alec@alectronic.co">alec@alectronic.co</a></p>
   </div>
 </footer>
 
