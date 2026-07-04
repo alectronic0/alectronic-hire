@@ -355,6 +355,9 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   .timeline::before {
@@ -398,6 +401,23 @@
     gap: 16px;
     flex-wrap: wrap;
     margin-bottom: 4px;
+  }
+
+  .timeline-company-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .timeline-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+    object-fit: contain;
+    background: #fff;
+    padding: 5px;
+    flex-shrink: 0;
   }
 
   .timeline-company {
@@ -476,6 +496,108 @@
     font-size: 1.05rem;
     margin: 0;
   }
+
+  .project-thumb {
+    width: 100%;
+    margin: 0 0 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* Before / after comparison */
+  .before-after {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .before-after figure { margin: 0; }
+
+  .before-after img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .before-after figcaption {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* Acquisition note + banner */
+  .timeline-note {
+    margin: 14px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .acq-banner {
+    margin-top: 10px;
+    max-width: 240px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: block;
+  }
+
+  /* Tech chip row at the foot of a card (reuses .tags/.tag) */
+  .card-tech {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Collapsible "past work" */
+  .past-work {
+    margin-top: 32px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-alt);
+    overflow: hidden;
+  }
+
+  .past-work > summary {
+    cursor: pointer;
+    padding: 20px 24px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .past-work > summary::-webkit-details-marker { display: none; }
+
+  .past-work > summary::after {
+    content: '▾';
+    color: var(--accent);
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .past-work[open] > summary::after { transform: rotate(180deg); }
+
+  .past-work-intro {
+    padding: 0 24px;
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+  }
+
+  .past-work .timeline { padding: 12px 24px 28px; }
 
   .project-field-label {
     font-size: 0.72rem;
@@ -620,8 +742,10 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
       <a href="#projects">Projects</a>
       <a href="#beyond">Beyond Code</a>
+      <a href="#volunteering">Volunteering</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -652,7 +776,8 @@
       <h2 class="section-title">A bit about me</h2>
       <div class="title-underline" aria-hidden="true"></div>
       <div class="about-card">
-        <p>[PLACEHOLDER: I'm a Senior Software Engineer at Deliveroo, working on high-scale systems that millions of people use every day.] [PLACEHOLDER: I care about writing clean, well-tested code and about the people I build it with.] [PLACEHOLDER: Outside of the day job, I like picking up new tools and side projects.] [PLACEHOLDER: I'm currently open to hearing about new opportunities.]</p>
+        <p>I'm a Senior Software Engineer at Deliveroo, working on high-scale backend systems. I care about clean, well-tested code, and about the people I build it with — I've picked up a Scrum Master certification along the way and enjoy the team side of engineering as much as the code.</p>
+        <p>My route in was a little unconventional — a First-class Computer Science degree, a year in Sydney working on VoIP software, and a spell in London food-tech before settling into engineering across public-sector (HMCTS, HMPPS via Solirius), Rightmove and now Deliveroo. It left me with a product mindset I still bring to every system I build.</p>
       </div>
     </div>
   </section>
@@ -722,14 +847,258 @@
         <li class="timeline-item">
           <div class="timeline-card">
             <div class="timeline-header">
-              <span class="timeline-company">Deliveroo</span>
-              <span class="timeline-dates">[PLACEHOLDER: start date] – Present</span>
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/deliveroo.jpg" alt="Deliveroo logo" loading="lazy">
+                <img class="timeline-logo" src="assets/logo/doordash.jpg" alt="DoorDash logo" loading="lazy">
+                <span class="timeline-company">Deliveroo</span>
+              </div>
+              <span class="timeline-dates">Mar 2021 – Present</span>
             </div>
-            <div class="timeline-role">Senior Software Engineer</div>
+            <div class="timeline-role">Senior Software Engineer (since May 2023) · previously Software Engineer</div>
             <ul class="timeline-bullets">
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. led a project that improved X by Y%]</li>
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. built a system that reduced Z]</li>
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. mentored engineers / led on-call practices]</li>
+              <li>Building and operating high-scale backend services on the platform</li>
+              <li class="placeholder">[PLACEHOLDER: standout achievement — e.g. led project X, improved metric Y]</li>
+              <li class="placeholder">[PLACEHOLDER: standout achievement — e.g. mentoring / on-call / cross-team work]</li>
+            </ul>
+            <p class="timeline-note">Deliveroo joined the DoorDash group in 2025, following DoorDash's acquisition of Deliveroo.</p>
+            <img class="acq-banner" src="assets/logo/deliveroo-x-doordash.webp" alt="Deliveroo and DoorDash combined branding" loading="lazy">
+            <div class="tags card-tech">
+              <span class="tag">Go</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">gRPC</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">REST</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Terraform</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/rightmove.jpg" alt="Rightmove logo" loading="lazy">
+                <span class="timeline-company">Rightmove</span>
+              </div>
+              <span class="timeline-dates">Nov 2018 – Mar 2021</span>
+            </div>
+            <div class="timeline-role">Software Engineer — Vendor &amp; Evaluate teams</div>
+            <ul class="timeline-bullets">
+              <li>Migrated code from the monolith into microservices</li>
+              <li>Upgraded services to Spring Boot 2 and Elasticsearch 6 &amp; 7</li>
+              <li>Full-stack work across Java 11, Node.js and React, with Kafka, Docker and Jenkins</li>
+            </ul>
+            <div class="tags card-tech">
+              <span class="tag">Java 11</span>
+              <span class="tag">Spring Boot 2</span>
+              <span class="tag">Elasticsearch</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Kafka</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Jenkins</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/solirius.avif" alt="Solirius Consulting logo" loading="lazy">
+                <span class="timeline-company">Solirius Consulting</span>
+              </div>
+              <span class="timeline-dates">Sep 2016 – Nov 2018</span>
+            </div>
+            <div class="timeline-role">Software Developer — contracted to HMCTS &amp; HMPPS</div>
+            <ul class="timeline-bullets">
+              <li>HMCTS Reform: built common components for Document &amp; Evidence Management, also acting as Scrum Master</li>
+              <li>HMPPS: delivered the Strategic Partner Gateway on Java 8, ServiceMix, ELK and AWS</li>
+              <li>Java 8, Spring Boot, Postgres, Docker, Terraform, Jenkins and REST APIs</li>
+            </ul>
+            <div class="tags card-tech">
+              <span class="tag">Java 8</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Postgres</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">Jenkins</span>
+              <span class="tag">ServiceMix</span>
+              <span class="tag">ELK</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+
+      <details class="past-work">
+        <summary>Past work experience (2009–2016)</summary>
+        <p class="past-work-intro">Before I moved into engineering full-time: startups, a year in Australia, and the retail and hospitality roles that built my work ethic, organisation and customer focus.</p>
+
+        <ol class="timeline">
+
+          <li class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company-wrap">
+                  <img class="timeline-logo" src="assets/logo/sky.jpg" alt="Sky logo" loading="lazy">
+                  <span class="timeline-company">Sky</span>
+                </div>
+                <span class="timeline-dates">Feb 2016 – Aug 2016</span>
+              </div>
+              <div class="timeline-role">VB Analyst</div>
+              <ul class="timeline-bullets">
+                <li>Gathered requirements and worked with stakeholders to refine processes</li>
+                <li>Designed and built scalable VBA solutions, introducing better team practices</li>
+              </ul>
+              <div class="tags card-tech">
+                <span class="tag">VBA</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company-wrap">
+                  <img class="timeline-logo" src="assets/logo/gleat.png" alt="GLEAT logo" loading="lazy">
+                  <span class="timeline-company">GLEAT</span>
+                </div>
+                <span class="timeline-dates">Nov 2015 – Jan 2016</span>
+              </div>
+              <div class="timeline-role">Product &amp; Mobile Developer</div>
+              <ul class="timeline-bullets">
+                <li>Picked up the codebase in days and shipped first features within two, learning JavaScript and Meteor on the job</li>
+                <li>Applied lean-startup principles and drove UI/UX improvements</li>
+              </ul>
+              <div class="tags card-tech">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Meteor</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company-wrap">
+                  <img class="timeline-logo" src="assets/logo/welcome-break.jpg" alt="Welcome Break logo" loading="lazy">
+                  <img class="timeline-logo" src="assets/logo/waitrose.jpg" alt="Waitrose logo" loading="lazy">
+                  <span class="timeline-company">Welcome Break × Waitrose</span>
+                </div>
+                <span class="timeline-dates">Mar 2015 – Feb 2016</span>
+              </div>
+              <div class="timeline-role">Waitrose Team Leader (Operations)</div>
+              <ul class="timeline-bullets">
+                <li>Ran the shop floor on shift — planning tasks and breaks, mentoring staff and coordinating product launches</li>
+                <li>Owned a store sub-section, analysing sales trends to drive ordering and reduce wastage</li>
+                <li>Represented the store at Partnership Council to shape future business plans</li>
+              </ul>
+              <div class="tags card-tech">
+                <span class="tag">Team Leadership</span>
+                <span class="tag">Operations</span>
+                <span class="tag">Customer Service</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company-wrap">
+                  <span class="timeline-company">Food Startup School</span>
+                </div>
+                <span class="timeline-dates">Feb 2015 – Aug 2015</span>
+              </div>
+              <div class="timeline-role">Social Marketing Intern</div>
+              <ul class="timeline-bullets">
+                <li>Generated leads and partnerships for a London food-tech events startup, running market research and social campaigns</li>
+                <li>Oversaw on-the-day operations for events</li>
+              </ul>
+              <div class="tags card-tech">
+                <span class="tag">Marketing</span>
+                <span class="tag">Market Research</span>
+                <span class="tag">Events</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company-wrap">
+                  <img class="timeline-logo" src="assets/logo/ivestel.jpg" alt="IVSTEL logo" loading="lazy">
+                  <span class="timeline-company">IVSTEL — Sydney, Australia</span>
+                </div>
+                <span class="timeline-dates">Sep 2013 – Dec 2014</span>
+              </div>
+              <div class="timeline-role">Technical Product Manager &amp; Support Engineer</div>
+              <ul class="timeline-bullets">
+                <li>Owned features for Adaptiv, a Java EE VoIP routing platform (Linux, MySQL, OpenSIPS, Radius)</li>
+                <li>Rebuilt the OS image, cutting setup from hours to minutes and removing 98% of human error</li>
+              </ul>
+              <div class="tags card-tech">
+                <span class="tag">Java EE</span>
+                <span class="tag">Linux</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">OpenSIPS</span>
+                <span class="tag">Radius</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div class="timeline-company-wrap">
+                  <img class="timeline-logo" src="assets/logo/waitrose.jpg" alt="Waitrose logo" loading="lazy">
+                  <span class="timeline-company">Waitrose</span>
+                </div>
+                <span class="timeline-dates">May 2009 – Feb 2013</span>
+              </div>
+              <div class="timeline-role">Senior Customer Sales Assistant</div>
+              <ul class="timeline-bullets">
+                <li>Nearly four years as a customer-facing partner — the foundation of my work ethic and a lasting commitment to superior, customer-focused service</li>
+                <li>Trained partners and managed shifts, planning tasks and breaks for the team</li>
+                <li>Full accountability for a store sub-section: analysed sales trends to drive ordering strategy, stock management and reduced wastage</li>
+                <li>Represented the store at Partnership Council meetings on future business plans</li>
+              </ul>
+              <div class="tags card-tech">
+                <span class="tag">Customer Service</span>
+                <span class="tag">Organisation</span>
+                <span class="tag">Strategy</span>
+                <span class="tag">Training</span>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="eyebrow">🎓 Education</div>
+      <h2 class="section-title">Where I studied</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+
+      <ol class="timeline">
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/general-assembly.jpg" alt="General Assembly logo" loading="lazy">
+                <span class="timeline-company">General Assembly</span>
+              </div>
+              <span class="timeline-dates">2014</span>
+            </div>
+            <div class="timeline-role">Product Management (part-time course)</div>
+            <ul class="timeline-bullets">
+              <li>Product discovery, roadmapping, user research, MVPs and stakeholder communication</li>
             </ul>
           </div>
         </li>
@@ -737,14 +1106,16 @@
         <li class="timeline-item">
           <div class="timeline-card">
             <div class="timeline-header">
-              <span class="timeline-company">Rightmove</span>
-              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/university-of-hertfordhisre.jpg" alt="University of Hertfordshire logo" loading="lazy">
+                <span class="timeline-company">University of Hertfordshire</span>
+              </div>
+              <span class="timeline-dates">2009 – 2012</span>
             </div>
-            <div class="timeline-role">Software Engineer</div>
+            <div class="timeline-role">BSc (Hons) Computer Science — First Class</div>
             <ul class="timeline-bullets">
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. replatformed a key customer-facing page]</li>
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. contributed to internal component library]</li>
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. improved performance/reliability metric]</li>
+              <li>Specialised in system architecture and networking; also covered AI/ML, databases and quantum computing</li>
+              <li>Cisco CCNA certified through the course</li>
             </ul>
           </div>
         </li>
@@ -752,46 +1123,19 @@
         <li class="timeline-item">
           <div class="timeline-card">
             <div class="timeline-header">
-              <span class="timeline-company">Solirius Consulting</span>
-              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
+              <span class="timeline-company">Oaklands College</span>
+              <span class="timeline-dates">2007 – 2009</span>
             </div>
-            <div class="timeline-role">Software Engineer</div>
+            <div class="timeline-role">BTEC National Diploma — IT &amp; Business Practitioner (DMM)</div>
             <ul class="timeline-bullets">
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. delivered client project as technical lead]</li>
-              <li class="placeholder">[PLACEHOLDER: achievement — e.g. adopted new technology to meet client needs]</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <span class="timeline-company">HMPPS</span>
-              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
-            </div>
-            <div class="timeline-role">[PLACEHOLDER: job title]</div>
-            <ul class="timeline-bullets">
-              <li class="placeholder">[PLACEHOLDER: achievement]</li>
-              <li class="placeholder">[PLACEHOLDER: achievement]</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <span class="timeline-company">Sky</span>
-              <span class="timeline-dates">[PLACEHOLDER: start date] – [PLACEHOLDER: end date]</span>
-            </div>
-            <div class="timeline-role">[PLACEHOLDER: job title]</div>
-            <ul class="timeline-bullets">
-              <li class="placeholder">[PLACEHOLDER: achievement]</li>
-              <li class="placeholder">[PLACEHOLDER: achievement]</li>
+              <li>Foundational IT and business skills</li>
             </ul>
           </div>
         </li>
 
       </ol>
+
+      <p style="margin-top: 28px;"><strong style="color: var(--text);">Certifications:</strong> Certified ScrumMaster® (Scrum Alliance, 2020) · Cisco CCNA (2012)</p>
     </div>
   </section>
 
@@ -804,36 +1148,68 @@
       <div class="project-grid">
 
         <div class="project-card">
-          <h3>[PLACEHOLDER: Rightmove project name]</h3>
+          <div class="before-after">
+            <figure>
+              <img src="assets/project/old-propty-details-page-web.jpg" alt="The legacy Rightmove property details page" loading="lazy">
+              <figcaption>Before — legacy page</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/project/new-propty-details-page-web.jpg" alt="The replatformed Rightmove property details page" loading="lazy">
+              <figcaption>After — replatformed microservice</figcaption>
+            </figure>
+          </div>
+          <h3>Sold Property Page replatform</h3>
           <p class="project-field-label">Problem</p>
-          <p class="project-field-value">[PLACEHOLDER: what problem was this solving?]</p>
+          <p class="project-field-value">Rightmove's Sold Property Page lived in an ageing legacy codebase.</p>
           <p class="project-field-label">What I built</p>
-          <p class="project-field-value">[PLACEHOLDER: describe what you built]</p>
+          <p class="project-field-value">Replatformed the page into a standalone microservice, with refactoring, UI work and load testing.</p>
           <p class="project-field-label">Tech used</p>
-          <p class="project-field-value">[PLACEHOLDER: e.g. Java, Spring Boot, React, GraphQL]</p>
-          <span class="project-impact">[PLACEHOLDER: impact / metric]</span>
+          <div class="tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Java</span>
+            <span class="tag">React</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Jest</span>
+            <span class="tag">JUnit</span>
+          </div>
+          <span class="project-impact">Rightmove · 2019–2020</span>
         </div>
 
         <div class="project-card">
-          <h3>[PLACEHOLDER: Rightmove project name]</h3>
+          <h3>HMCTS Reform — Document &amp; Evidence Management</h3>
           <p class="project-field-label">Problem</p>
-          <p class="project-field-value">[PLACEHOLDER: what problem was this solving?]</p>
+          <p class="project-field-value">Courts &amp; Tribunals digital services needed shared, reusable components for handling case documents and evidence.</p>
           <p class="project-field-label">What I built</p>
-          <p class="project-field-value">[PLACEHOLDER: describe what you built]</p>
+          <p class="project-field-value">Built common components as part of the Reform programme, also acting as Scrum Master.</p>
           <p class="project-field-label">Tech used</p>
-          <p class="project-field-value">[PLACEHOLDER: e.g. Elasticsearch, Java, Kafka]</p>
-          <span class="project-impact">[PLACEHOLDER: impact / metric]</span>
+          <div class="tags">
+            <span class="tag">Java 8</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Postgres</span>
+            <span class="tag">Liquibase</span>
+            <span class="tag">Docker</span>
+            <span class="tag">JUnit</span>
+            <span class="tag">Mockito</span>
+          </div>
+          <span class="project-impact">HMCTS via Solirius · 2017–2018</span>
         </div>
 
         <div class="project-card">
-          <h3>[PLACEHOLDER: Rightmove project name]</h3>
+          <h3>Strategic Partner Gateway (SPG)</h3>
           <p class="project-field-label">Problem</p>
-          <p class="project-field-value">[PLACEHOLDER: what problem was this solving?]</p>
+          <p class="project-field-value">HMPPS needed a secure integration gateway for its strategic partners.</p>
           <p class="project-field-label">What I built</p>
-          <p class="project-field-value">[PLACEHOLDER: describe what you built]</p>
+          <p class="project-field-value">Delivered gateway services as a Java engineer on the programme.</p>
           <p class="project-field-label">Tech used</p>
-          <p class="project-field-value">[PLACEHOLDER: e.g. TypeScript, React, Node.js]</p>
-          <span class="project-impact">[PLACEHOLDER: impact / metric]</span>
+          <div class="tags">
+            <span class="tag">Java 8</span>
+            <span class="tag">ServiceMix</span>
+            <span class="tag">ELK</span>
+            <span class="tag">Ansible</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">AWS</span>
+          </div>
+          <span class="project-impact">HMPPS via Solirius · 2016–2017</span>
         </div>
 
         <div class="project-card github">
@@ -878,6 +1254,47 @@
     </div>
   </section>
 
+  <section id="volunteering">
+    <div class="container">
+      <div class="eyebrow">🤝 Volunteering</div>
+      <h2 class="section-title">Giving back</h2>
+      <div class="title-underline" aria-hidden="true"></div>
+
+      <ol class="timeline">
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/likegoblins.jpg" alt="Goblins logo" loading="lazy">
+                <span class="timeline-company">Goblins</span>
+              </div>
+              <span class="timeline-dates">May 2025 – Present</span>
+            </div>
+            <div class="timeline-role">Community Volunteer</div>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/good-for-nothing.jpg" alt="Good for Nothing logo" loading="lazy">
+                <span class="timeline-company">Good for Nothing</span>
+              </div>
+              <span class="timeline-dates">Mar 2014 – Dec 2014</span>
+            </div>
+            <div class="timeline-role">Project Manager · Business &amp; Technical Consultant</div>
+            <ul class="timeline-bullets">
+              <li>Ran hackathon-style social-enterprise projects, providing technical consulting and branding for cause-led founders</li>
+            </ul>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="container">
       <div class="eyebrow">📬 Contact</div>
@@ -888,7 +1305,7 @@
         <a class="btn btn-primary btn-large" href="mailto:alec@alectronic.co">✉️ alec@alectronic.co</a>
         <div class="contact-links">
           <a href="https://github.com/alectronic0" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://linkedin.com/in/alectronic0" target="_blank" rel="noopener">[PLACEHOLDER: confirm LinkedIn URL] LinkedIn ↗</a>
+          <a href="https://www.linkedin.com/in/alectronic0" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
       </div>
     </div>
