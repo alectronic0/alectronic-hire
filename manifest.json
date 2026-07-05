@@ -1,0 +1,17 @@
+{
+  "name": "Hire Alec — Senior Software Engineer",
+  "short_name": "Hire Alec",
+  "description": "Alec Doran-Twyford — Senior Software Engineer at Deliveroo. Open to new opportunities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050607",
+  "theme_color": "#050607",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
