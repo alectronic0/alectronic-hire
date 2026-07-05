@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #050607;
+      --card: #101317;
+      --card-hover: #161a1f;
+      --border: rgba(255, 255, 255, 0.10);
+      --accent: #7EC8E3;
+      --accent-dark: #4fa8c6;
+      --text: #f5f5f7;
+      --text-muted: #a8adb4;
+      --radius: 16px;
+      --font: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      /* Subtle radial gradient for depth */
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(126, 200, 227, 0.04) 0%, transparent 70%),
+        var(--bg);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Gentle floating animation for the GIF */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    .card {
+      max-width: 520px;
+      width: calc(100% - 32px);
+      background: rgba(16, 19, 23, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 32px 36px;
+      text-align: center;
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .gif-wrapper {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto 28px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .gif-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .title span {
+      color: var(--accent);
+    }
+
+    .message {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--bg);
+      background: var(--accent);
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(126, 200, 227, 0.25);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      opacity: 0.6;
+      animation: fadeInUp 0.6s ease-out 0.15s both;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 20px 28px;
+      }
+      .title {
+        font-size: 1.4rem;
+      }
+      .message {
+        font-size: 0.92rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="gif-wrapper">
+      <img id="gif" src="" alt="404 illustration" loading="eager">
+    </div>
+    <h1 class="title" id="title"></h1>
+    <p class="message" id="message"></p>
+    <a href="/" class="btn">← Take Me Home</a>
+  </div>
+  <p class="footer">You've found a page that doesn't exist on Alec's Portfolio.</p>
+
+  <script>
+    const combos = [
+      {
+        gif: "https://date.alectronic.co/img/gifs/xUStFKHmuFPYk.gif",
+        title: "404 — Nothing to See Here",
+        message: "Yeah… you weren't meant to see this. Please disperse."
+      },
+      {
+        gif: "https://date.alectronic.co/img/gifs/SRx5tBBrTQOBi.gif",
+        title: "404 — Lost in Space",
+        message: "I have absolutely no idea how you got here. But honestly? Same."
+      },
+      {
+        gif: "https://date.alectronic.co/img/gifs/9PAIhJvcQ35hdZPUir.gif",
+        title: "404 — It's a Trap!",
+        message: "Admiral Ackbar tried to warn you. This page doesn't exist."
+      },
+      {
+        gif: "https://date.alectronic.co/img/gifs/E87jjnSCANThe.gif",
+        title: "404 — What Do You Want?!",
+        message: "I don't know what you're looking for, but it's not here. Dramatic, I know."
+      },
+      {
+        gif: "https://date.alectronic.co/img/gifs/eoFJSruUWf7qq1zNHD.gif",
+        title: "404 — Unauthorised Access",
+        message: "Not sure Knuckles should have approved this… because this page doesn't exist."
+      },
+      {
+        gif: "https://date.alectronic.co/img/gifs/SmoCFhZCi1kzu.gif",
+        title: "404 — I'll Allow It",
+        message: "Not sure how you got here, but I'll allow it. You should probably head back though."
+      },
+      {
+        gif: "https://date.alectronic.co/img/gifs/NTur7XlVDUdqM.gif",
+        title: "404 — This Is Fine",
+        message: "Everything is fine. This page is just… not here. But it's fine. Totally fine."
+      },
+      {
+        gif: "https://date.alectronic.co/img/gifs/maNB0qAiRVAty.gif",
+        title: "404 — Fixing Bugs",
+        message: "Our best engineer is on it. Probably. She's definitely typing something."
+      }
+    ];
+
+    const pick = combos[Math.floor(Math.random() * combos.length)];
+    document.getElementById("gif").src = pick.gif;
+    document.getElementById("gif").alt = pick.title;
+    document.getElementById("title").textContent = pick.title;
+    document.getElementById("message").textContent = pick.message;
+  </script>
+</body>
+</html>
