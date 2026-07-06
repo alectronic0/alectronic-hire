@@ -774,7 +774,50 @@
   footer a { color: var(--text-muted); }
   footer a:hover { color: var(--accent); }
 
-  @media (max-width: 640px) {
+  .project-thumb, .before-after img {
+    cursor: zoom-in;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 6, 7, 0.95);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+  }
+  .lightbox.active {
+    display: flex;
+  }
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--text-muted);
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .lightbox-close:hover {
+    color: var(--text);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
     section { padding: 64px 0; }
     .hero { padding: 64px 0 56px; }
     .hero-inner { gap: 28px; }
@@ -1256,7 +1299,7 @@
           <p class="project-field-label">Problem</p>
           <p class="project-field-value">Rightmove's Sold Property Page lived in an ageing legacy codebase.</p>
           <p class="project-field-label">What I built</p>
-          <p class="project-field-value">Replatformed the page into a standalone microservice, with refactoring, UI work and load testing.</p>
+          <p class="project-field-value">Replatformed the page into a standalone microservice, with refactoring, UI work and load testing. This involved building and migrating across several microservices including sold property search, sold property web, property details app, and property details web.</p>
           <p class="project-field-label">Tech used</p>
           <div class="tags">
             <span class="tag">Spring Boot</span>
@@ -1413,6 +1456,11 @@
   </div>
 </footer>
 
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img" alt="Enlarged view">
+</div>
+
 <script>
 (function() {
   const logos = {
@@ -1438,6 +1486,19 @@
       img.setAttribute('loading', 'lazy');
       tag.prepend(img);
     }
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.project-thumb, .before-after img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      lightboxImg.src = img.src;
+    });
+  });
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
   });
 })();
 </script>
