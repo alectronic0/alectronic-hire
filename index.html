@@ -386,12 +386,34 @@
     color: var(--text);
     padding: 5px 12px;
     border-radius: 999px;
+    transition: all 0.2s ease;
+  }
+
+  .tag.tag-love {
+    background: rgba(46, 204, 113, 0.15);
+    border-color: rgba(46, 204, 113, 0.4);
+  }
+  .tag.tag-like {
+    background: rgba(52, 152, 219, 0.15);
+    border-color: rgba(52, 152, 219, 0.4);
+  }
+  .tag.tag-avoid {
+    background: rgba(231, 76, 60, 0.15);
+    border-color: rgba(231, 76, 60, 0.4);
   }
 
   .tag img {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
+  }
+
+  .skills-legend {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
   }
 
   /* Experience timeline */
@@ -830,6 +852,13 @@
       <div class="eyebrow">🛠️ Skills</div>
       <h2 class="section-title">What I work with</h2>
       <div class="title-underline" aria-hidden="true"></div>
+
+      <div class="skills-legend">
+        <span class="tag tag-love">💚 Love it</span>
+        <span class="tag tag-like">👍 Like it</span>
+        <span class="tag tag-avoid">💔 Prefer to avoid</span>
+      </div>
+
       <div class="skills-grid">
 
         <div class="skill-card">
