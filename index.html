@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hire Alec">
 <meta property="og:title" content="Alec Doran-Twyford — Senior Software Engineer">
 <meta property="og:description" content="Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire. Previously at Rightmove, Solirius, HMPPS and Sky.">
-<meta property="og:image" content="https://hire.alectronic.co/assets/og-image.png">
+<meta property="og:image" content="https://hire.alectronic.co/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Alec Doran-Twyford, Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire">
@@ -22,10 +22,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Alec Doran-Twyford — Senior Software Engineer">
 <meta name="twitter:description" content="Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire. Previously at Rightmove, Solirius, HMPPS and Sky.">
-<meta name="twitter:image" content="https://hire.alectronic.co/assets/og-image.png">
+<meta name="twitter:image" content="https://hire.alectronic.co/assets/og-image.jpg">
 <meta name="twitter:image:alt" content="Alec Doran-Twyford, Senior Software Engineer at Deliveroo, based in Welwyn Garden City, Hertfordshire">
 
-<!-- [PLACEHOLDER: swap assets/og-image.png for a real photo/banner when you have one, keep it 1200x630] -->
+
 
 <meta name="theme-color" content="#050607">
 <meta name="author" content="Alec Doran-Twyford">
@@ -49,7 +49,7 @@
     },
     "description": "Senior Software Engineer at Deliveroo, based in Welwyn Garden City. Previously at Rightmove, Solirius, HMPPS and Sky.",
     "url": "https://hire.alectronic.co/",
-    "image": "https://hire.alectronic.co/assets/og-image.png",
+    "image": "https://hire.alectronic.co/assets/og-image.jpg",
     "homeLocation": {
       "@type": "Place",
       "name": "Welwyn Garden City, England"
@@ -80,7 +80,7 @@
     --accent-wash: rgba(126, 200, 227, 0.12);
     --radius: 16px;
     --max-width: 1080px;
-    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   * { box-sizing: border-box; }
@@ -376,6 +376,9 @@
   }
 
   .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 0.82rem;
     font-weight: 600;
     background: var(--accent-wash);
@@ -383,6 +386,12 @@
     color: var(--text);
     padding: 5px 12px;
     border-radius: 999px;
+  }
+
+  .tag img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
   }
 
   /* Experience timeline */
@@ -500,10 +509,7 @@
     font-weight: 700;
   }
 
-  .placeholder {
-    color: var(--accent);
-    font-style: italic;
-  }
+
 
   /* Projects */
   .project-grid {
@@ -768,9 +774,7 @@
 </style>
 </head>
 <body>
-<div style="background-color: #ff9800; color: #000; text-align: center; padding: 15px; font-weight: bold; font-family: var(--font); position: sticky; top: 0; z-index: 9999;">
-  🚧 https://hire.alectronic.co/ is under construction. Please visit my <a href="https://www.linkedin.com/in/alectronic0" style="color: #000; text-decoration: underline;">LinkedIn</a> for now. 🚧
-</div>
+
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -794,7 +798,7 @@
 
   <section class="hero" id="hero">
     <div class="container hero-inner">
-      <img class="hero-avatar" src="assets/avatar-placeholder.svg" alt="[PLACEHOLDER: replace with a real photo of Alec Doran-Twyford]">
+      <img class="hero-avatar" src="assets/avatar.png" alt="Alec Doran-Twyford">
       <div class="hero-content">
         <div class="hero-wave" aria-hidden="true">👋</div>
         <h1>Alec Doran-Twyford</h1>
@@ -895,9 +899,11 @@
             </div>
             <div class="timeline-role">Senior Software Engineer (since May 2023) · previously Software Engineer</div>
             <ul class="timeline-bullets">
-              <li>Building and operating high-scale backend services on the platform</li>
-              <li class="placeholder">[PLACEHOLDER: standout achievement — e.g. led project X, improved metric Y]</li>
-              <li class="placeholder">[PLACEHOLDER: standout achievement — e.g. mentoring / on-call / cross-team work]</li>
+              <li>5+ years on the Consumer Pricing team — from IPO through profitability to DoorDash acquisition — the go-to domain expert for fees across the organisation</li>
+              <li>Built internal tooling that cut fee configuration from days of careful manual checking to minutes, saving significant engineering hours</li>
+              <li>Designed and coordinated co-pricing, a core microservice managing fees, benefits &amp; pricing across the consumer journey (home, menu, basket, checkout)</li>
+              <li>Now supporting the migration of pricing systems to the unified Wolt / DoorDash / Deliveroo platform, bringing Deliveroo's pricing framework to the wider organisation</li>
+              <li>Cross-functional partner to Product, DS, Strategy, MLE &amp; Engineering — stewards the backlog, PR reviews and on-call rota (Rootly) while keeping core repos on the latest libraries</li>
             </ul>
             <p class="timeline-note">Deliveroo joined the DoorDash group in 2025, following DoorDash's acquisition of Deliveroo.</p>
             <img class="acq-banner" src="assets/logo/deliveroo-x-doordash.webp" alt="Deliveroo and DoorDash combined branding" loading="lazy">
@@ -1146,7 +1152,7 @@
           <div class="timeline-card">
             <div class="timeline-header">
               <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/university-of-hertfordhisre.jpg" alt="University of Hertfordshire logo" loading="lazy">
+                <img class="timeline-logo" src="assets/logo/university-of-hertfordshire.jpg" alt="University of Hertfordshire logo" loading="lazy">
                 <span class="timeline-company">University of Hertfordshire</span>
               </div>
               <span class="timeline-dates">2009 – 2012</span>
@@ -1162,7 +1168,10 @@
         <li class="timeline-item">
           <div class="timeline-card">
             <div class="timeline-header">
-              <span class="timeline-company">Oaklands College</span>
+              <div class="timeline-company-wrap">
+                <img class="timeline-logo" src="assets/logo/oaklands.svg" alt="Oaklands College logo" loading="lazy">
+                <span class="timeline-company">Oaklands College</span>
+              </div>
               <span class="timeline-dates">2007 – 2009</span>
             </div>
             <div class="timeline-role">BTEC National Diploma — IT &amp; Business Practitioner (DMM)</div>
@@ -1185,6 +1194,25 @@
       <div class="title-underline" aria-hidden="true"></div>
 
       <div class="project-grid">
+
+        <div class="project-card">
+          <img class="project-thumb" src="assets/deliveroo-fees.png" alt="Deliveroo consumer fees breakdown showing delivery fee, small order fee, service fee, bag charge and priority delivery" loading="lazy">
+          <h3>Consumer Pricing &amp; Fees Platform</h3>
+          <p class="project-field-label">Problem</p>
+          <p class="project-field-value">Deliveroo's fee configuration required days of careful manual work, and the pricing system needed a scalable architecture to serve fees, benefits &amp; pricing across multiple surfaces.</p>
+          <p class="project-field-label">What I built</p>
+          <p class="project-field-value">Internal tooling that reduced fee configuration to minutes, and co-pricing — a core microservice managing fees, benefits &amp; pricing across home, menu, basket and checkout. Now leading migration to the unified Wolt / DoorDash / Deliveroo platform.</p>
+          <p class="project-field-label">Tech used</p>
+          <div class="tags">
+            <span class="tag">Go</span>
+            <span class="tag">gRPC</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Kubernetes</span>
+          </div>
+          <span class="project-impact">Deliveroo · 2021–Present</span>
+        </div>
 
         <div class="project-card">
           <div class="before-after">
@@ -1357,6 +1385,35 @@
     <p>&copy; 2026 Alec Doran-Twyford · Welwyn Garden City, Hertfordshire · <a href="mailto:alec@alectronic.co">alec@alectronic.co</a></p>
   </div>
 </footer>
+
+<script>
+(function() {
+  const logos = {
+    'Java': 'java', 'Java 8': 'java', 'Java 11': 'java', 'Java EE': 'java',
+    'Go': 'go', 'Ruby': 'ruby', 'TypeScript': 'typescript', 'JavaScript': 'javascript',
+    'Spring Boot': 'spring', 'Spring Boot 2': 'spring', 'Ruby on Rails': 'rails',
+    'gRPC': 'grpc', 'Kafka': 'kafka', 'Postgres': 'postgresql', 'Redis': 'redis',
+    'AWS': 'aws', 'Kubernetes': 'kubernetes', 'Docker': 'docker', 'Terraform': 'terraform',
+    'GraphQL': 'graphql', 'Elasticsearch': 'elasticsearch', 'React': 'react',
+    'Node.js': 'nodejs', 'Jenkins': 'jenkins', 'Meteor': 'meteor',
+    'Linux': 'linux', 'MySQL': 'mysql', 'Jest': 'jest', 'JUnit': 'junit',
+    'Ansible': 'ansible', 'ELK': 'elasticsearch'
+  };
+  document.querySelectorAll('.tag').forEach(function(tag) {
+    var name = tag.textContent.trim();
+    var logo = logos[name];
+    if (logo) {
+      var img = document.createElement('img');
+      img.src = 'assets/tech/' + logo + '.svg';
+      img.alt = '';
+      img.width = 16;
+      img.height = 16;
+      img.setAttribute('loading', 'lazy');
+      tag.prepend(img);
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
