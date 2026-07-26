@@ -634,7 +634,7 @@ window.CONTENT = {
   </section>
 `,
   'footer': `
-<footer>
+<footer id="footer">
   <div class="container">
     <p>&copy; <span class="year"></span> Alec &middot; hire.alec.today &middot; All rights reserved. &middot; <a href="mailto:alec@alectronic.co">alec@alectronic.co</a></p>
     <p style="margin-top: 8px; font-size: 0.85em; opacity: 0.8;">Powered by <a href="https://alec.today/" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">Alec Doran-Twyford (Alectronic&trade;)</a></p>
