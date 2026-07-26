@@ -1,7 +1,7 @@
 window.CONTENT = {
   'banner': `
 <div style="background-color: #ff9800; color: #000; text-align: center; padding: 15px; font-weight: bold; font-family: var(--font); position: sticky; top: 0; z-index: 9999;"> 
-  🚧 https://hire.alectronic.co/ is under construction. Please visit my <a href="https://www.linkedin.com/in/alectronic0" style="color: #000; text-decoration: underline;">LinkedIn</a> for now. 🚧 
+  🚧 https://hire.alec.today/ is under construction. Please visit my <a href="https://www.linkedin.com/in/alectronic0" style="color: #000; text-decoration: underline;">LinkedIn</a> for now. 🚧 
 </div> 
 
 <a class="skip-link" href="#main">Skip to content</a>

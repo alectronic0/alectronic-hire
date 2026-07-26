@@ -3,213 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page Not Found</title>
+  <title>404 — Page Not Found | Hire Alec Today</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --bg: #050607;
-      --card: #101317;
-      --card-hover: #161a1f;
-      --border: rgba(255, 255, 255, 0.10);
-      --accent: #7EC8E3;
-      --accent-dark: #4fa8c6;
-      --text: #f5f5f7;
-      --text-muted: #a8adb4;
-      --radius: 16px;
-      --font: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-
     body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
       min-height: 100dvh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow-x: hidden;
-      /* Subtle radial gradient for depth */
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(126, 200, 227, 0.04) 0%, transparent 70%),
-        var(--bg);
+      padding: 2rem 1rem;
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Poppins', sans-serif;
     }
-
-    /* Fade-in animation */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Gentle floating animation for the GIF */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-8px); }
-    }
-
-    .card {
-      max-width: 520px;
-      width: calc(100% - 32px);
-      background: rgba(16, 19, 23, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 40px 32px 36px;
+    .card-404 {
+      width: min(480px, 92vw);
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
       text-align: center;
-      animation: fadeInUp 0.6s ease-out both;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     }
-
-    .gif-wrapper {
+    .gif-wrap {
       width: 100%;
-      max-width: 360px;
-      margin: 0 auto 28px;
+      aspect-ratio: 16 / 9;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--card);
-      animation: float 4s ease-in-out infinite;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: #1e293b;
     }
-
-    .gif-wrapper img {
-      display: block;
+    .gif-wrap img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
-
-    .title {
-      font-size: 1.75rem;
+    .title-404 {
+      font-size: 1.5rem;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
-    .title span {
-      color: var(--accent);
-    }
-
-    .message {
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      font-family: var(--font);
+    .message-404 {
       font-size: 0.95rem;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 1.75rem;
+    }
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
       font-weight: 600;
-      color: var(--bg);
-      background: var(--accent);
-      border: none;
-      border-radius: 10px;
+      color: #fff;
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      border-radius: 12px;
       text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-
-    .btn:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(126, 200, 227, 0.25);
+    .btn-home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
     }
-
-    .btn:active {
-      transform: translateY(0);
-    }
-
-    .footer {
-      margin-top: 28px;
+    .footer-404 {
+      margin-top: 1.5rem;
       font-size: 0.8rem;
-      color: var(--text-muted);
-      opacity: 0.6;
-      animation: fadeInUp 0.6s ease-out 0.15s both;
-    }
-
-    /* Responsive */
-    @media (max-width: 480px) {
-      .card {
-        padding: 28px 20px 28px;
-      }
-      .title {
-        font-size: 1.4rem;
-      }
-      .message {
-        font-size: 0.92rem;
-      }
+      color: #64748b;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="gif-wrapper">
-      <img id="gif" src="" alt="404 illustration" loading="eager">
+  <div class="card-404">
+    <div class="gif-wrap">
+      <img id="gif" src="" alt="404 illustration">
     </div>
-    <h1 class="title" id="title"></h1>
-    <p class="message" id="message"></p>
-    <a href="/" class="btn">← Take Me Home</a>
+    <h1 class="title-404" id="title"></h1>
+    <p class="message-404" id="message"></p>
+    <a href="/" class="btn-home">← Return to Portfolio</a>
   </div>
-  <p class="footer">You've found a page that doesn't exist on Alec's Portfolio.</p>
+  <p class="footer-404">You've found a page that doesn't exist on Hire Alec Today.</p>
 
   <script>
     const combos = [
       {
-        gif: "https://date.alectronic.co/img/gifs/xUStFKHmuFPYk.gif",
-        title: "404 — Nothing to See Here",
+        gif:     "https://date.alec.today/img/gifs/xUStFKHmuFPYk.gif",
+        title:   "404 — Nothing to See Here",
         message: "Yeah… you weren't meant to see this. Please disperse."
       },
       {
-        gif: "https://date.alectronic.co/img/gifs/SRx5tBBrTQOBi.gif",
-        title: "404 — Lost in Space",
+        gif:     "https://date.alec.today/img/gifs/SRx5tBBrTQOBi.gif",
+        title:   "404 — Lost in Space",
         message: "I have absolutely no idea how you got here. But honestly? Same."
       },
       {
-        gif: "https://date.alectronic.co/img/gifs/9PAIhJvcQ35hdZPUir.gif",
-        title: "404 — It's a Trap!",
+        gif:     "https://date.alec.today/img/gifs/9PAIhJvcQ35hdZPUir.gif",
+        title:   "404 — It's a Trap!",
         message: "Admiral Ackbar tried to warn you. This page doesn't exist."
       },
       {
-        gif: "https://date.alectronic.co/img/gifs/E87jjnSCANThe.gif",
-        title: "404 — What Do You Want?!",
+        gif:     "https://date.alec.today/img/gifs/E87jjnSCANThe.gif",
+        title:   "404 — What Do You Want?!",
         message: "I don't know what you're looking for, but it's not here. Dramatic, I know."
       },
       {
-        gif: "https://date.alectronic.co/img/gifs/eoFJSruUWf7qq1zNHD.gif",
-        title: "404 — Unauthorised Access",
+        gif:     "https://date.alec.today/img/gifs/eoFJSruUWf7qq1zNHD.gif",
+        title:   "404 — Unauthorised Access",
         message: "Not sure Knuckles should have approved this… because this page doesn't exist."
       },
       {
-        gif: "https://date.alectronic.co/img/gifs/SmoCFhZCi1kzu.gif",
-        title: "404 — I'll Allow It",
+        gif:     "https://date.alec.today/img/gifs/SmoCFhZCi1kzu.gif",
+        title:   "404 — I'll Allow It",
         message: "Not sure how you got here, but I'll allow it. You should probably head back though."
       },
       {
-        gif: "https://date.alectronic.co/img/gifs/NTur7XlVDUdqM.gif",
-        title: "404 — This Is Fine",
+        gif:     "https://date.alec.today/img/gifs/NTur7XlVDUdqM.gif",
+        title:   "404 — This Is Fine",
         message: "Everything is fine. This page is just… not here. But it's fine. Totally fine."
       },
       {
-        gif: "https://date.alectronic.co/img/gifs/maNB0qAiRVAty.gif",
-        title: "404 — Fixing Bugs",
+        gif:     "https://date.alec.today/img/gifs/maNB0qAiRVAty.gif",
+        title:   "404 — Fixing Bugs",
         message: "Our best engineer is on it. Probably. She's definitely typing something."
       }
     ];
 
     const pick = combos[Math.floor(Math.random() * combos.length)];
-    document.getElementById("gif").src = pick.gif;
-    document.getElementById("gif").alt = pick.title;
-    document.getElementById("title").textContent = pick.title;
+    document.getElementById("gif").src     = pick.gif;
+    document.getElementById("gif").alt     = pick.title;
+    document.getElementById("title").textContent   = pick.title;
     document.getElementById("message").textContent = pick.message;
   </script>
 </body>

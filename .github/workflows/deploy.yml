@@ -68,5 +68,5 @@ jobs:
 
       - name: Ping Google Search Console
         run: |
-          curl -s "https://www.google.com/ping?sitemap=https://hire.alectronic.co/sitemap.xml" -o /dev/null
-          echo "Sitemap pinged: https://hire.alectronic.co/sitemap.xml"
+          curl -s "https://www.google.com/ping?sitemap=https://hire.alec.today/sitemap.xml" -o /dev/null
+          echo "Sitemap pinged: https://hire.alec.today/sitemap.xml"
