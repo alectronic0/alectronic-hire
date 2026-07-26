@@ -637,6 +637,7 @@ window.CONTENT = {
 <footer>
   <div class="container">
     <p>&copy; 2026 Alec Doran-Twyford · Welwyn Garden City, Hertfordshire · <a href="mailto:alec@alectronic.co">alec@alectronic.co</a></p>
+    <p style="margin-top: 8px; font-size: 0.85em; opacity: 0.8;">Powered by <a href="https://alec.today/" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">Alec Doran-Twyford (Alectronic)</a></p>
   </div>
 </footer>
 `,
