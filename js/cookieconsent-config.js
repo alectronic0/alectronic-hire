@@ -67,23 +67,23 @@ window.addEventListener('load', function() {
                         showPreferencesBtn: "Cookie Preferences"
                     },
                     preferencesModal: {
-                        title: "Cookie Preferences",
+                        title: "Manage Cookie Preferences",
                         acceptAllBtn: "Accept All",
                         acceptNecessaryBtn: "Reject Non-Essential",
                         closeIconLabel: "Close",
                         sections: [
                             {
-                                title: "Cookie Usage",
-                                description: "We use cookies to ensure basic website functionality and analyze anonymous site performance."
+                                title: "Cookie Usage Overview",
+                                description: "We use cookies to ensure basic website functionality and analyze anonymous site traffic to improve user experience."
                             },
                             {
                                 title: "Strictly Necessary Cookies",
-                                description: "Essential for the website to function properly and cannot be disabled.",
+                                description: "Essential cookies required for website security, page navigation, and basic core operations. These cannot be disabled.",
                                 category: "necessary"
                             },
                             {
                                 title: "Performance & Analytics Cookies",
-                                description: "Helps us understand how visitors interact with the website through anonymous usage statistics.",
+                                description: "Optional Google Analytics cookies that help us measure site traffic and visitor interactions anonymously.",
                                 category: "analytics"
                             }
                         ]
