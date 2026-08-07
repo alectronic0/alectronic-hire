@@ -641,4 +641,60 @@ window.CONTENT = {
   </div>
 </footer>
 `,
+,
+  'not_found': `
+  <section class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
+    <div class="card-404">
+      <div class="gif-wrap">
+        <img id="gif" src="" alt="404 illustration">
+      </div>
+      <h1 class="title-404" id="title"></h1>
+      <p class="message-404" id="message"></p>
+      <a href="/" class="btn-home">← Return to Portfolio</a>
+    </div>
+    <p class="footer-404">You've found a page that doesn't exist on Hire Alec Today.</p>
+  </section>
+  `,
+  'not_found_data': [
+      {
+        gif:     "https://date.alec.today/img/gifs/xUStFKHmuFPYk.gif",
+        title:   "404 — Nothing to See Here",
+        message: "Yeah… you weren't meant to see this. Please disperse."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/SRx5tBBrTQOBi.gif",
+        title:   "404 — Lost in Space",
+        message: "I have absolutely no idea how you got here. But honestly? Same."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/9PAIhJvcQ35hdZPUir.gif",
+        title:   "404 — It's a Trap!",
+        message: "Admiral Ackbar tried to warn you. This page doesn't exist."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/E87jjnSCANThe.gif",
+        title:   "404 — What Do You Want?!",
+        message: "I don't know what you're looking for, but it's not here. Dramatic, I know."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/eoFJSruUWf7qq1zNHD.gif",
+        title:   "404 — Unauthorised Access",
+        message: "Not sure Knuckles should have approved this… because this page doesn't exist."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/SmoCFhZCi1kzu.gif",
+        title:   "404 — I'll Allow It",
+        message: "Not sure how you got here, but I'll allow it. You should probably head back though."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/NTur7XlVDUdqM.gif",
+        title:   "404 — This Is Fine",
+        message: "Everything is fine. This page is just… not here. But it's fine. Totally fine."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/maNB0qAiRVAty.gif",
+        title:   "404 — Fixing Bugs",
+        message: "Our best engineer is on it. Probably. She's definitely typing something."
+      }
+  ]
 };
