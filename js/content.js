@@ -641,7 +641,6 @@ window.CONTENT = {
   </div>
 </footer>
 `,
-,
   'not_found': `
   <section class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
     <div class="card-404">
