@@ -7,6 +7,11 @@
     const mainContent = document.getElementById('main-content');
     const page = mainContent ? mainContent.getAttribute('data-page') : null;
 
+    // Inject structured data into head
+    if (C.structured_data) {
+        document.head.insertAdjacentHTML('beforeend', C.structured_data);
+    }
+
     // Inject header
     body.insertAdjacentHTML('afterbegin', (C.banner || '') + (C.header || ''));
     
@@ -14,7 +19,7 @@
         if (page === 'home') {
             let html = '';
             for (const key in C) {
-                if (['banner', 'header', 'footer', 'not_found', 'not_found_data'].includes(key)) continue;
+                if (['banner', 'header', 'footer', 'not_found', 'not_found_data', 'structured_data'].includes(key)) continue;
                 html += C[key];
             }
             mainContent.innerHTML = html;

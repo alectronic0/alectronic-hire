@@ -698,3 +698,113 @@ window.CONTENT = {
       }
   ]
 };
+window.CONTENT.structured_data = `
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://hire.alec.today/",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://alec.today/#person",
+      "name": "Alec Doran-Twyford",
+      "givenName": "Alec",
+      "familyName": "Doran-Twyford",
+      "alternateName": ["Alectronic", "alectronic0"],
+      "gender": "Male",
+      "jobTitle": "Senior Software Engineer",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "London, United Kingdom"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Welwyn Garden City",
+        "addressRegion": "Hertfordshire",
+        "addressCountry": "GB"
+      },
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+      "skills": [
+        "Go", "Java", "Ruby", "TypeScript", "React",
+        "gRPC", "Kafka", "Postgres", "Redis", "AWS",
+        "Docker", "Terraform", "Distributed Systems",
+        "Microservices", "Backend Engineering", "Full Stack Engineering"
+      ],
+      "description": "Senior Software Engineer at Deliveroo, based in Welwyn Garden City. Previously at Rightmove, Solirius, HMPPS and Sky.",
+      "url": "https://hire.alec.today/",
+      "image": "https://date.alec.today/img/alec/alec-portrait-terracotta-wall.webp",
+      "email": [
+        "alec@alectronic.co",
+        "date@alec.today"
+      ],
+      "nationality": [
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "New Zealand" }
+      ],
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Welwyn Garden City, Hertfordshire, England"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Deliveroo",
+        "sameAs": "https://en.wikipedia.org/wiki/Deliveroo"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Hertfordshire",
+          "sameAs": "https://en.wikipedia.org/wiki/University_of_Hertfordshire"
+        },
+        { "@type": "Organization", "name": "Rightmove", "sameAs": "https://en.wikipedia.org/wiki/Rightmove" },
+        { "@type": "Organization", "name": "Solirius Consulting" },
+        { "@type": "Organization", "name": "Sky", "sameAs": "https://en.wikipedia.org/wiki/Sky_Group" },
+        { "@type": "Organization", "name": "GLEAT" },
+        { "@type": "Organization", "name": "Welcome Break Waitrose" }
+      ],
+      "knowsAbout": [
+        "Software Engineering", "Backend Development", "Full Stack Engineering",
+        "Go", "Java", "Ruby on Rails", "TypeScript", "React",
+        "gRPC", "Kafka", "Postgres", "Redis", "AWS",
+        "Docker", "Terraform", "Distributed Systems", "Microservices"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "BSc Computer Science (First Class Honours)",
+          "credentialCategory": "degree",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "University of Hertfordshire",
+            "sameAs": "https://en.wikipedia.org/wiki/University_of_Hertfordshire"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certified Scrum Master",
+          "credentialCategory": "certification"
+        }
+      ],
+      "sameAs": [
+        "https://alec.today/",
+        "https://hire.alec.today/",
+        "https://date.alec.today/",
+        "https://gift.alec.today/",
+        "https://github.com/alectronic0",
+        "https://www.linkedin.com/in/alectronic0/",
+        "https://www.instagram.com/alectronic0/",
+        "https://www.tiktok.com/@alectronic0",
+        "https://www.pinterest.com/alectronic0/",
+        "https://linktr.ee/Alectronic",
+        "https://t.me/alectronic0"
+      ]
+    }
+  }
+  </script>
+`;
