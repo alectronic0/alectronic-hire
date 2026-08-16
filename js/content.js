@@ -4,7 +4,7 @@ window.CONTENT = {
   🚧 https://hire.alec.today/ is under construction. Please visit my <a href="https://www.linkedin.com/in/alectronic0" style="color: #000; text-decoration: underline;">LinkedIn</a> for now. 🚧 
 </div> 
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main-content">Skip to content</a>
 `,
   'header': `
 <header class="site-nav">
@@ -16,7 +16,7 @@ window.CONTENT = {
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#projects">Projects</a>
-      <a href="#beyond">Beyond Code</a>
+      <a href="#next">Next Steps</a>
       <a href="#volunteering">Volunteering</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -467,15 +467,16 @@ window.CONTENT = {
           <p class="project-field-label">Problem</p>
           <p class="project-field-value">Rightmove's Sold Property Page lived in an ageing legacy codebase.</p>
           <p class="project-field-label">What I built</p>
-          <p class="project-field-value">Replatformed the page into a standalone microservice, with refactoring, UI work and load testing. This involved building and migrating across several microservices including sold property search, sold property web, property details app, and property details web.</p>
+          <p class="project-field-value">Replatformed the page into a standalone microservice, migrating from the legacy monolith. Upgraded services to Elasticsearch 6/7, integrated Kafka, and utilized CDC Pacts. This involved building and migrating across several microservices including sold property search, sold property web, and property details.</p>
           <p class="project-field-label">Tech used</p>
           <div class="tags">
-            <span class="tag">Spring Boot</span>
             <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Elasticsearch</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Docker</span>
             <span class="tag">React</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Jest</span>
-            <span class="tag">JUnit</span>
           </div>
           <span class="project-impact">Rightmove · 2019–2020</span>
         </div>
@@ -494,12 +495,29 @@ window.CONTENT = {
             <span class="tag">Postgres</span>
             <span class="tag">Liquibase</span>
             <span class="tag">Docker</span>
-            <span class="tag">JUnit</span>
-            <span class="tag">Mockito</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Jenkins</span>
           </div>
           <span class="project-impact">HMCTS via Solirius · 2017–2018</span>
         </div>
 
+        <div class="project-card">
+          <h3>HMPPS — Strategic Partner Gateway</h3>
+          <p class="project-field-label">Problem</p>
+          <p class="project-field-value">Her Majesty's Prison and Probation Service needed a secure, reliable gateway for partner data exchange.</p>
+          <p class="project-field-label">What I built</p>
+          <p class="project-field-value">Built the Strategic Partner Gateway (SPG) leveraging Java and ServiceMix on AWS. Set up comprehensive monitoring with the ELK stack and infrastructure automation via Ansible.</p>
+          <p class="project-field-label">Tech used</p>
+          <div class="tags">
+            <span class="tag">Java 8</span>
+            <span class="tag">ServiceMix</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Elasticsearch</span>
+            <span class="tag">ELK</span>
+            <span class="tag">Ansible</span>
+          </div>
+          <span class="project-impact">HMPPS via Solirius · 2016–2017</span>
+        </div>
 
         <div class="project-card github">
           <h3><span aria-hidden="true">🐙</span> More on GitHub</h3>
