@@ -1,664 +1,465 @@
+const CV_DOC = 'https://docs.google.com/document/d/16hYXhtY2CBdwjQpA6dj5gnDKi_yFCQS3c0NxfGC1zIo';
+const HMCTS_PRS = 'https://github.com/search?q=org%3Ahmcts+author%3Aalectronic0&amp;type=pullrequests';
+
 window.CONTENT = {
   'banner': `
-<div style="background-color: #ff9800; color: #000; text-align: center; padding: 15px; font-weight: bold; font-family: var(--font); position: sticky; top: 0; z-index: 9999;"> 
-  🚧 https://hire.alec.today/ is under construction. Please visit my <a href="https://www.linkedin.com/in/alectronic0" style="color: #000; text-decoration: underline;">LinkedIn</a> for now. 🚧 
-</div> 
-
 <a class="skip-link" href="#main-content">Skip to content</a>
 `,
   'header': `
 <header class="site-nav">
   <div class="container nav-inner">
-    <a class="logo" href="#hero">Alec<span>.</span>Dev</a>
+    <a class="logo" href="#hero">Alec Doran-Twyford</a>
     <nav class="nav-links" aria-label="Section navigation">
-      <a href="#about">About</a>
+      <a href="#timeline">Timeline</a>
       <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
       <a href="#projects">Projects</a>
-      <a href="#next">Next Steps</a>
-      <a href="#volunteering">Volunteering</a>
+      <a href="#next">Next</a>
       <a href="#contact">Contact</a>
     </nav>
+    <a class="nav-cv" href="${CV_DOC}/preview" target="_blank" rel="noopener noreferrer">Open CV</a>
   </div>
 </header>
 `,
   'hero': `
 <section class="hero" id="hero">
-    <div class="container hero-inner">
-      <img class="hero-avatar" src="assets/avatar.png" alt="Alec Doran-Twyford">
-      <div class="hero-content">
-        <div class="hero-wave" aria-hidden="true">👋</div>
-        <h1>Alec Doran-Twyford</h1>
-        <div class="role">Senior Software Engineer</div>
-        <div class="location">📍 Welwyn Garden City, Hertfordshire</div>
-        <p class="pitch">I build reliable, high-scale software and enjoy turning tricky problems into simple, well-tested systems. Currently at Deliveroo.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">View my work</a>
-          <a class="btn btn-secondary" href="mailto:alec@alectronic.co">Email me</a>
+    <div class="container">
+      <h1>Alec Doran-Twyford</h1>
+      <div class="hero-inner">
+        <img class="hero-avatar" src="assets/avatar.webp" alt="Alec Doran-Twyford" width="180" height="180" fetchpriority="high">
+        <div class="hero-content">
+          <p class="role">Senior Software Engineer at Deliveroo</p>
+          <p class="pitch">For more than five years I've worked on the systems that decide what a Deliveroo customer pays: fees, benefits and pricing, from the home page to checkout. I'm happy where I am, and something serious would still get my attention.</p>
+          <div class="hero-actions">
+            <div class="cv-split">
+              <a class="btn btn-primary cv-open" href="${CV_DOC}/preview" target="_blank" rel="noopener noreferrer">Open CV</a>
+              <button type="button" class="btn btn-primary cv-toggle" aria-expanded="false" aria-controls="cv-downloads" aria-label="Download CV">
+                <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+              <ul class="cv-menu" id="cv-downloads" hidden>
+                <li><a href="${CV_DOC}/export?format=pdf">Download PDF</a></li>
+                <li><a href="${CV_DOC}/export?format=docx">Download Word (.docx)</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-secondary" href="#pay">Pay and availability</a>
+            <a class="btn btn-secondary" href="mailto:alec@alectronic.co">Email me</a>
+          </div>
         </div>
       </div>
+      <dl class="glance">
+        <div><dt>Role</dt><dd>Senior Software Engineer, Level 5</dd></div>
+        <div><dt>Location</dt><dd>Welwyn Garden City, Hertfordshire. Fully remote preferred.</dd></div>
+        <div><dt>Right to work</dt><dd>British and New Zealand citizen. No sponsorship needed.</dd></div>
+        <div><dt>Notice</dt><dd>5 weeks, rising to 6 on 15 March 2027</dd></div>
+        <div><dt>Open to</dt><dd>A serious move, ideally permanent. Not actively searching.</dd></div>
+      </dl>
     </div>
   </section>
 `,
   'about': `
 <section id="about">
     <div class="container">
-      <div class="eyebrow">🙋 About</div>
-      <h2 class="section-title">A bit about me</h2>
-      <div class="title-underline" aria-hidden="true"></div>
-      <div class="about-card">
-        <p>I'm a Senior Software Engineer at Deliveroo, working on high-scale backend systems. I care about clean, well-tested code, and about the people I build it with — I've picked up a Scrum Master certification along the way and enjoy the team side of engineering as much as the code.</p>
-        <p>My route in was a little unconventional — a First-class Computer Science degree, a year in Sydney working on VoIP software, and a spell in London food-tech before settling into engineering across public-sector (HMCTS, HMPPS via Solirius), Rightmove and now Deliveroo. It left me with a product mindset I still bring to every system I build.</p>
-      </div>
+      <h2 class="section-title">About</h2>
+      <p>I'm a backend-leaning full-stack engineer who likes turning tricky problems into simple, well-tested systems. At Deliveroo I've been through the IPO, the push to profitability and the DoorDash acquisition, and I'm often the person teams ask about how fees really work. These days I'm known as the caretaker of our fee services, keeping them fast, efficient and reliable.</p>
+      <p>My route here wasn't a straight line. I started on the shop floor at Waitrose, where I learned to run a shift, train people and look after customers. After a First in Computer Science I went to Sydney to work on VoIP software, then tried London startups before moving into engineering for HMCTS and HMPPS, then Rightmove, then Deliveroo. I still bring that product and customer view to everything I build.</p>
+    </div>
+  </section>
+`,
+  'timeline': `
+<section id="timeline">
+    <div class="container">
+      <h2 class="section-title">Timeline</h2>
+      <p class="section-intro">From college to Deliveroo. A dashed line marks time between jobs.</p>
+
+      <ol class="career">
+
+        <li class="career-item career-major">
+          <span class="career-year">2021</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/deliveroo.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>Deliveroo, Consumer Pricing</h3>
+            </div>
+            <p class="career-meta"><time datetime="2021-03">Mar 2021</time> to now. Work.</p>
+            <p class="career-role">Senior Software Engineer since May 2023, Software Engineer before that</p>
+            <ul>
+              <li>Built internal tools that cut fee configuration from days of careful manual checking to minutes</li>
+              <li>Halved latency in a core fee service, from 80ms to 40ms, using caching and parallelism</li>
+              <li>Designed and coordinated a core microservice for fees, benefits and pricing across home, menu, basket and checkout</li>
+              <li>Supporting the migration of pricing systems to the shared Wolt, DoorDash and Deliveroo platform, advising the team and working on small order fees</li>
+              <li>Work with Product, Data Science, Strategy and Machine Learning, and look after the backlog, PR reviews and on-call training</li>
+            </ul>
+            <p class="career-tech">Go, TypeScript, Ruby, gRPC, GraphQL, Postgres, Redis, Kafka, AWS, Terraform</p>
+            <p class="career-note">Deliveroo joined the DoorDash group in 2025. Alongside this I've been a volunteer advocate with Goblins, a Discord community for meeting friends and playing games, since <time datetime="2025-05">May 2025</time>. I welcome new members, give people a safe place to talk when something's wrong, and run in-person meet-ups.</p>
+          </div>
+        </li>
+
+        <li class="career-item career-major">
+          <span class="career-year">2018</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/rightmove.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>Rightmove</h3>
+            </div>
+            <p class="career-meta"><time datetime="2018-11">Nov 2018</time> to <time datetime="2021-03">Mar 2021</time>. Work.</p>
+            <p class="career-role">Software Engineer, Vendor and Evaluate teams</p>
+            <ul>
+              <li>Worked with the Vendor team on the Sold Property web, API and search services, then built the Property Details page, front end and API, with the Evaluate team</li>
+              <li>Upgraded services to Spring Boot 2 and Elasticsearch 6 and 7</li>
+              <li>Helped build Kanso, Rightmove's frontend component library, and sat on the committee that prioritised it</li>
+              <li>Mentored and pair programmed with engineers to broaden their full-stack skills</li>
+            </ul>
+            <p class="career-tech">Java 11, Spring Boot, Elasticsearch, React, GraphQL, Node.js, Kafka, Docker, Jenkins</p>
+          </div>
+        </li>
+
+        <li class="career-item career-major">
+          <span class="career-year">2016</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/solirius.avif" alt="" width="36" height="36" loading="lazy">
+              <h3>Solirius Consulting, for HMCTS and HMPPS</h3>
+            </div>
+            <p class="career-meta"><time datetime="2016-09">Sep 2016</time> to <time datetime="2018-11">Nov 2018</time>. Work.</p>
+            <p class="career-role">Software Developer, junior level</p>
+            <ul>
+              <li>HMCTS Reform: helped build common components for document and evidence management and acted as Scrum Master. <a href="${HMCTS_PRS}" target="_blank" rel="noopener noreferrer">176 merged open-source PRs</a></li>
+              <li>HMPPS: delivered the Strategic Partner Gateway on Java 8, ServiceMix, ELK and AWS</li>
+            </ul>
+            <p class="career-tech">Java 8, Spring Boot, Postgres, Docker, Terraform, Jenkins, Ansible, AWS</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/sky.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>Sky, VB Analyst</h3>
+            </div>
+            <p class="career-meta"><time datetime="2016-02">Feb 2016</time> to <time datetime="2016-08">Aug 2016</time>. Work.</p>
+            <p>Gathered requirements with stakeholders and built scalable VBA tools, bringing better engineering practices to the team.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <span class="career-year">2015</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/gleat.webp" alt="" width="36" height="36" loading="lazy">
+              <h3>GLEAT, Product and Mobile Developer</h3>
+            </div>
+            <p class="career-meta"><time datetime="2015-11">Nov 2015</time> to <time datetime="2016-01">Jan 2016</time>. Work.</p>
+            <p>Learned JavaScript and Meteor on the job and shipped first features within two days.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/welcome-break.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>Welcome Break and Waitrose, Team Leader</h3>
+            </div>
+            <p class="career-meta"><time datetime="2015-03">Mar 2015</time> to <time datetime="2016-02">Feb 2016</time>. Work.</p>
+            <p>Ran the shop floor on shift, mentored staff and owned a store section's sales analysis and ordering. Taught myself VBA to automate the store's stock macros.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-body">
+            <div class="career-title">
+              <h3>Food Startup School, Social Marketing Intern</h3>
+            </div>
+            <p class="career-meta"><time datetime="2015-02">Feb 2015</time> to <time datetime="2015-08">Aug 2015</time>. Work.</p>
+            <p>Generated leads and partnerships for a London food-tech events startup and ran events on the day.</p>
+          </div>
+        </li>
+
+        <li class="career-item career-gap">
+          <div class="career-body">
+            <h3>Back to the UK from Sydney</h3>
+            <p class="career-meta"><time datetime="2014-12">Dec 2014</time> to <time datetime="2015-02">Feb 2015</time>. Between jobs.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <span class="career-year">2014</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/general-assembly.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>General Assembly, Sydney</h3>
+            </div>
+            <p class="career-meta"><time datetime="2014-04">Apr 2014</time> to <time datetime="2014-06">Jun 2014</time>. Education.</p>
+            <p>Part-time Product Management course.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/good-for-nothing.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>Good for Nothing, Sydney</h3>
+            </div>
+            <p class="career-meta"><time datetime="2014-03">Mar 2014</time> to <time datetime="2014-12">Dec 2014</time>. Volunteering.</p>
+            <p>Project manager and technical consultant on hackathon-style projects for social enterprises.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <span class="career-year">2013</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/ivestel.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>IVSTEL, Sydney</h3>
+            </div>
+            <p class="career-meta"><time datetime="2013-09">Sep 2013</time> to <time datetime="2014-12">Dec 2014</time>. Work.</p>
+            <p class="career-role">Technical Product Manager and Support Engineer</p>
+            <p>Owned features for a Java EE VoIP routing platform and rebuilt its OS image, cutting setup from hours to minutes. Also ran the Glebe backpacker community as a volunteer, from <time datetime="2013-12">Dec 2013</time> to <time datetime="2014-08">Aug 2014</time>.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-body">
+            <h3>Glebe Computer Project, Sydney</h3>
+            <p class="career-meta"><time datetime="2013-07">Jul 2013</time> to <time datetime="2013-09">Sep 2013</time>. Volunteering.</p>
+            <p>Repaired community centre computers and explained technical problems in plain terms to older users.</p>
+          </div>
+        </li>
+
+        <li class="career-item career-gap">
+          <div class="career-body">
+            <h3>Travelling in South East Asia, Australia and New Zealand</h3>
+            <p class="career-meta"><time datetime="2013-02">Feb 2013</time> to <time datetime="2013-09">Sep 2013</time>. Travel.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <span class="career-year">2009</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/waitrose.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>Waitrose, Senior Customer Sales Assistant</h3>
+            </div>
+            <p class="career-meta"><time datetime="2009-05">May 2009</time> to <time datetime="2013-02">Feb 2013</time>. Work.</p>
+            <p>Nearly four years of customer service, training partners, managing shifts and owning a store section's ordering, stock and wastage. Represented the store at Partnership Council.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/university-of-hertfordshire.jpg" alt="" width="36" height="36" loading="lazy">
+              <h3>University of Hertfordshire</h3>
+            </div>
+            <p class="career-meta"><time datetime="2009-09">Sep 2009</time> to <time datetime="2012-07">Jul 2012</time>. Education.</p>
+            <p>BSc (Hons) Computer Science, First Class. Specialised in system architecture and networking. Cisco CCNA, 2012.</p>
+          </div>
+        </li>
+
+        <li class="career-item">
+          <span class="career-year">2007</span>
+          <div class="career-body">
+            <div class="career-title">
+              <img class="career-logo" src="assets/logo/oaklands.svg" alt="" width="36" height="36" loading="lazy">
+              <h3>Oaklands College</h3>
+            </div>
+            <p class="career-meta"><time datetime="2007">2007</time> to <time datetime="2009">2009</time>. Education.</p>
+            <p>BTEC National Diploma for IT Practitioners, IT and Business (DMM).</p>
+          </div>
+        </li>
+
+      </ol>
+
+      <p class="career-certs">Certifications: Certified ScrumMaster, Scrum Alliance (<time datetime="2020-03">Mar 2020</time> to <time datetime="2022-03">Mar 2022</time>). Cisco CCNA (2012).</p>
     </div>
   </section>
 `,
   'skills': `
 <section id="skills">
     <div class="container">
-      <div class="eyebrow">🛠️ Skills</div>
-      <h2 class="section-title">What I work with</h2>
-      <div class="title-underline" aria-hidden="true"></div>
-
-      <div class="skills-legend">
-        <span class="tag tag-love">💚 Love it</span>
-        <span class="tag tag-like">👍 Like it</span>
-        <span class="tag tag-avoid">💔 Prefer to avoid</span>
-      </div>
-
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <h3><span aria-hidden="true">💻</span> Languages</h3>
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Go</span>
-            <span class="tag">Ruby</span>
-            <span class="tag">TypeScript</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3><span aria-hidden="true">🧩</span> Backend &amp; Microservices</h3>
-          <div class="tags">
-            <span class="tag">Spring Boot</span>
-            <span class="tag">Ruby on Rails</span>
-            <span class="tag">gRPC</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">Postgres</span>
-            <span class="tag">Redis</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3><span aria-hidden="true">☁️</span> Cloud &amp; Infra</h3>
-          <div class="tags">
-            <span class="tag">AWS</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Terraform</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <h3><span aria-hidden="true">🤝</span> Ways of Working</h3>
-          <div class="tags">
-            <span class="tag">Agile / Scrum</span>
-            <span class="tag">TDD</span>
-            <span class="tag">Code Review</span>
-            <span class="tag">Mentoring</span>
-            <span class="tag">Cross-team Collaboration</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-`,
-  'experience': `
-<section id="experience">
-    <div class="container">
-      <div class="eyebrow">📈 Experience</div>
-      <h2 class="section-title">Where I've worked</h2>
-      <div class="title-underline" aria-hidden="true"></div>
-
-      <ol class="timeline">
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/deliveroo.jpg" alt="Deliveroo logo" loading="lazy">
-                <img class="timeline-logo" src="assets/logo/doordash.jpg" alt="DoorDash logo" loading="lazy">
-                <span class="timeline-company">Deliveroo</span>
-              </div>
-              <span class="timeline-dates">Mar 2021 – Present</span>
-            </div>
-            <div class="timeline-role">Senior Software Engineer (since May 2023) · previously Software Engineer</div>
-            <ul class="timeline-bullets">
-              <li>5+ years on the Consumer Pricing team — from IPO through profitability to DoorDash acquisition — the go-to domain expert for fees across the organisation</li>
-              <li>Built internal tooling that cut fee configuration from days of careful manual checking to minutes, saving significant engineering hours</li>
-              <li>Designed and coordinated co-pricing, a core microservice managing fees, benefits &amp; pricing across the consumer journey (home, menu, basket, checkout)</li>
-              <li>Now supporting the migration of pricing systems to the unified Wolt / DoorDash / Deliveroo platform, bringing Deliveroo's pricing framework to the wider organisation</li>
-              <li>Cross-functional partner to Product, DS, Strategy, MLE &amp; Engineering — stewards the backlog, PR reviews and on-call rota (Rootly) while keeping core repos on the latest libraries</li>
-            </ul>
-            <p class="timeline-note">Deliveroo joined the DoorDash group in 2025, following DoorDash's acquisition of Deliveroo.</p>
-            <img class="acq-banner" src="assets/logo/deliveroo-x-doordash.webp" alt="Deliveroo and DoorDash combined branding" loading="lazy">
-            <div class="tags card-tech">
-              <span class="tag">Go</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">gRPC</span>
-              <span class="tag">GraphQL</span>
-              <span class="tag">REST</span>
-              <span class="tag">AWS</span>
-              <span class="tag">Terraform</span>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/rightmove.jpg" alt="Rightmove logo" loading="lazy">
-                <span class="timeline-company">Rightmove</span>
-              </div>
-              <span class="timeline-dates">Nov 2018 – Mar 2021</span>
-            </div>
-            <div class="timeline-role">Software Engineer — Vendor &amp; Evaluate teams</div>
-            <ul class="timeline-bullets">
-              <li>Migrated code from the monolith into microservices</li>
-              <li>Upgraded services to Spring Boot 2 and Elasticsearch 6 &amp; 7</li>
-              <li>Full-stack work across Java 11, Node.js and React, with Kafka, Docker and Jenkins</li>
-            </ul>
-            <div class="tags card-tech">
-              <span class="tag">Java 11</span>
-              <span class="tag">Spring Boot 2</span>
-              <span class="tag">Elasticsearch</span>
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Kafka</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Jenkins</span>
-            </div>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/solirius.avif" alt="Solirius Consulting logo" loading="lazy">
-                <span class="timeline-company">Solirius Consulting</span>
-              </div>
-              <span class="timeline-dates">Sep 2016 – Nov 2018</span>
-            </div>
-            <div class="timeline-role">Junior Software Engineer — contracted to HMCTS &amp; HMPPS</div>
-            <ul class="timeline-bullets">
-              <li>HMCTS Reform: built common components for Document &amp; Evidence Management, also acting as Scrum Master. <a href="https://github.com/search?q=org%3Ahmcts+author%3Aalectronic0&amp;type=pullrequests" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">View my 30+ open-source PRs</a></li>
-              <li>HMPPS: delivered the Strategic Partner Gateway on Java 8, ServiceMix, ELK and AWS</li>
-              <li>Java 8, Spring Boot, Postgres, Docker, Terraform, Jenkins and REST APIs</li>
-            </ul>
-            <div class="tags card-tech">
-              <span class="tag">Java 8</span>
-              <span class="tag">Spring Boot</span>
-              <span class="tag">Postgres</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Terraform</span>
-              <span class="tag">Jenkins</span>
-              <span class="tag">ServiceMix</span>
-              <span class="tag">ELK</span>
-              <span class="tag">AWS</span>
-            </div>
-          </div>
-        </li>
-
-      </ol>
-
-      <details class="past-work">
-        <summary>Past work experience (2009–2016)</summary>
-        <p class="past-work-intro">Before I moved into engineering full-time: startups, a year in Australia, and the retail and hospitality roles that built my work ethic, organisation and customer focus.</p>
-
-        <ol class="timeline">
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div class="timeline-company-wrap">
-                  <img class="timeline-logo" src="assets/logo/sky.jpg" alt="Sky logo" loading="lazy">
-                  <span class="timeline-company">Sky</span>
-                </div>
-                <span class="timeline-dates">Feb 2016 – Aug 2016</span>
-              </div>
-              <div class="timeline-role">VB Analyst</div>
-              <ul class="timeline-bullets">
-                <li>Gathered requirements and worked with stakeholders to refine processes</li>
-                <li>Designed and built scalable VBA solutions, introducing better team practices</li>
-              </ul>
-              <div class="tags card-tech">
-                <span class="tag">VBA</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div class="timeline-company-wrap">
-                  <img class="timeline-logo" src="assets/logo/gleat.png" alt="GLEAT logo" loading="lazy">
-                  <span class="timeline-company">GLEAT</span>
-                </div>
-                <span class="timeline-dates">Nov 2015 – Jan 2016</span>
-              </div>
-              <div class="timeline-role">Product &amp; Mobile Developer</div>
-              <ul class="timeline-bullets">
-                <li>Picked up the codebase in days and shipped first features within two, learning JavaScript and Meteor on the job</li>
-                <li>Applied lean-startup principles and drove UI/UX improvements</li>
-              </ul>
-              <div class="tags card-tech">
-                <span class="tag">JavaScript</span>
-                <span class="tag">Meteor</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div class="timeline-company-wrap">
-                  <img class="timeline-logo" src="assets/logo/welcome-break.jpg" alt="Welcome Break logo" loading="lazy">
-                  <img class="timeline-logo" src="assets/logo/waitrose.jpg" alt="Waitrose logo" loading="lazy">
-                  <span class="timeline-company">Welcome Break × Waitrose</span>
-                </div>
-                <span class="timeline-dates">Mar 2015 – Feb 2016</span>
-              </div>
-              <div class="timeline-role">Waitrose Team Leader (Operations)</div>
-              <ul class="timeline-bullets">
-                <li>Ran the shop floor on shift — planning tasks and breaks, mentoring staff and coordinating product launches</li>
-                <li>Owned a store sub-section, analysing sales trends to drive ordering and reduce wastage</li>
-                <li>Represented the store at Partnership Council to shape future business plans</li>
-              </ul>
-              <div class="tags card-tech">
-                <span class="tag">Team Leadership</span>
-                <span class="tag">Operations</span>
-                <span class="tag">Customer Service</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div class="timeline-company-wrap">
-                  <span class="timeline-company">Food Startup School</span>
-                </div>
-                <span class="timeline-dates">Feb 2015 – Aug 2015</span>
-              </div>
-              <div class="timeline-role">Social Marketing Intern</div>
-              <ul class="timeline-bullets">
-                <li>Generated leads and partnerships for a London food-tech events startup, running market research and social campaigns</li>
-                <li>Oversaw on-the-day operations for events</li>
-              </ul>
-              <div class="tags card-tech">
-                <span class="tag">Marketing</span>
-                <span class="tag">Market Research</span>
-                <span class="tag">Events</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div class="timeline-company-wrap">
-                  <img class="timeline-logo" src="assets/logo/ivestel.jpg" alt="IVSTEL logo" loading="lazy">
-                  <span class="timeline-company">IVSTEL — Sydney, Australia</span>
-                </div>
-                <span class="timeline-dates">Sep 2013 – Dec 2014</span>
-              </div>
-              <div class="timeline-role">Technical Product Manager &amp; Support Engineer</div>
-              <ul class="timeline-bullets">
-                <li>Owned features for Adaptiv, a Java EE VoIP routing platform (Linux, MySQL, OpenSIPS, Radius)</li>
-                <li>Rebuilt the OS image, cutting setup from hours to minutes and removing 98% of human error</li>
-              </ul>
-              <div class="tags card-tech">
-                <span class="tag">Java EE</span>
-                <span class="tag">Linux</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">OpenSIPS</span>
-                <span class="tag">Radius</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div class="timeline-company-wrap">
-                  <img class="timeline-logo" src="assets/logo/waitrose.jpg" alt="Waitrose logo" loading="lazy">
-                  <span class="timeline-company">Waitrose</span>
-                </div>
-                <span class="timeline-dates">May 2009 – Feb 2013</span>
-              </div>
-              <div class="timeline-role">Senior Customer Sales Assistant</div>
-              <ul class="timeline-bullets">
-                <li>Nearly four years as a customer-facing partner — the foundation of my work ethic and a lasting commitment to superior, customer-focused service</li>
-                <li>Trained partners and managed shifts, planning tasks and breaks for the team</li>
-                <li>Full accountability for a store sub-section: analysed sales trends to drive ordering strategy, stock management and reduced wastage</li>
-                <li>Represented the store at Partnership Council meetings on future business plans</li>
-              </ul>
-              <div class="tags card-tech">
-                <span class="tag">Customer Service</span>
-                <span class="tag">Organisation</span>
-                <span class="tag">Strategy</span>
-                <span class="tag">Training</span>
-              </div>
-            </div>
-          </li>
-
-        </ol>
-      </details>
-    </div>
-  </section>
-`,
-  'education': `
-<section id="education">
-    <div class="container">
-      <div class="eyebrow">🎓 Education</div>
-      <h2 class="section-title">Where I studied</h2>
-      <div class="title-underline" aria-hidden="true"></div>
-
-      <ol class="timeline">
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/general-assembly.jpg" alt="General Assembly logo" loading="lazy">
-                <span class="timeline-company">General Assembly</span>
-              </div>
-              <span class="timeline-dates">2014</span>
-            </div>
-            <div class="timeline-role">Product Management (part-time course)</div>
-            <ul class="timeline-bullets">
-              <li>Product discovery, roadmapping, user research, MVPs and stakeholder communication</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/university-of-hertfordshire.jpg" alt="University of Hertfordshire logo" loading="lazy">
-                <span class="timeline-company">University of Hertfordshire</span>
-              </div>
-              <span class="timeline-dates">2009 – 2012</span>
-            </div>
-            <div class="timeline-role">BSc (Hons) Computer Science — First Class</div>
-            <ul class="timeline-bullets">
-              <li>Specialised in system architecture and networking; also covered AI/ML, databases and quantum computing</li>
-              <li>Cisco CCNA certified through the course</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/oaklands.svg" alt="Oaklands College logo" loading="lazy">
-                <span class="timeline-company">Oaklands College</span>
-              </div>
-              <span class="timeline-dates">2007 – 2009</span>
-            </div>
-            <div class="timeline-role">BTEC National Diploma — IT &amp; Business Practitioner (DMM)</div>
-            <ul class="timeline-bullets">
-              <li>Foundational IT and business skills</li>
-            </ul>
-          </div>
-        </li>
-
-      </ol>
-
-      <p style="margin-top: 28px;"><strong style="color: var(--text);">Certifications:</strong> Certified ScrumMaster® (Scrum Alliance, 2020) · Cisco CCNA (2012)</p>
+      <h2 class="section-title">Skills</h2>
+      <dl class="skill-rows">
+        <div><dt>Languages</dt><dd>Go, Java, Ruby, TypeScript</dd></div>
+        <div><dt>Backend</dt><dd>Spring Boot, Ruby on Rails, gRPC, GraphQL, Kafka, Postgres, Redis</dd></div>
+        <div><dt>Frontend</dt><dd>React, Next.js, Node.js</dd></div>
+        <div><dt>Cloud and infrastructure</dt><dd>AWS, Docker, Terraform</dd></div>
+        <div><dt>Ways of working</dt><dd>Agile and Scrum, TDD, code review, mentoring, cross-team collaboration, on-call</dd></div>
+      </dl>
     </div>
   </section>
 `,
   'projects': `
 <section id="projects">
     <div class="container">
-      <div class="eyebrow">🚀 Projects</div>
-      <h2 class="section-title">Things I've built</h2>
-      <div class="title-underline" aria-hidden="true"></div>
+      <h2 class="section-title">Projects</h2>
 
-      <div class="project-grid">
-
-        <div class="project-card">
-          <img class="project-thumb" src="assets/project/deliveroo-fees.png" alt="Deliveroo consumer fees breakdown showing delivery fee, small order fee, service fee, bag charge and priority delivery" loading="lazy">
-          <h3>Consumer Pricing &amp; Fees Platform</h3>
-          <p class="project-field-label">Problem</p>
-          <p class="project-field-value">Deliveroo's fee configuration required days of careful manual work, and the pricing system needed a scalable architecture to serve fees, benefits &amp; pricing across multiple surfaces.</p>
-          <p class="project-field-label">What I built</p>
-          <p class="project-field-value">Internal tooling that reduced fee configuration to minutes, and co-pricing — a core microservice managing fees, benefits &amp; pricing across home, menu, basket and checkout. Now leading migration to the unified Wolt / DoorDash / Deliveroo platform.</p>
-          <p class="project-field-label">Tech used</p>
-          <div class="tags">
-            <span class="tag">Go</span>
-            <span class="tag">gRPC</span>
-            <span class="tag">GraphQL</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Terraform</span>
-          </div>
-          <span class="project-impact">Deliveroo · 2021–Present</span>
+      <article class="project-row">
+        <div class="before-after shots">
+          <figure>
+            <img src="assets/project/deliveroo-basket.webp" alt="Deliveroo basket on a test order listing small order, delivery, service, bag and premium delivery fees" width="390" height="584" loading="lazy">
+            <figcaption>Every fee on one test order</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/project/deliveroo-service-fee.webp" alt="Deliveroo app sheet explaining that the service fee is a fixed amount or a percentage of the basket" width="425" height="170" loading="lazy">
+            <figcaption>How the app explains the service fee</figcaption>
+          </figure>
         </div>
-
-        <div class="project-card">
-          <div class="before-after">
-            <figure>
-              <img src="assets/project/old-propty-details-page-web.jpg" alt="The legacy Rightmove property details page" loading="lazy">
-              <figcaption>Before — legacy page</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/project/new-propty-details-page-web.jpg" alt="The replatformed Rightmove property details page" loading="lazy">
-              <figcaption>After — replatformed microservice</figcaption>
-            </figure>
-          </div>
-          <h3>Sold Property Page replatform</h3>
-          <p class="project-field-label">Problem</p>
-          <p class="project-field-value">Rightmove's Sold Property Page lived in an ageing legacy codebase.</p>
-          <p class="project-field-label">What I built</p>
-          <p class="project-field-value">Replatformed the page into a standalone microservice, migrating from the legacy monolith. Upgraded services to Elasticsearch 6/7, integrated Kafka, and utilized CDC Pacts. This involved building and migrating across several microservices including sold property search, sold property web, and property details.</p>
-          <p class="project-field-label">Tech used</p>
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">Elasticsearch</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Docker</span>
-            <span class="tag">React</span>
-          </div>
-          <span class="project-impact">Rightmove · 2019–2020</span>
+        <div>
+          <h3>Consumer pricing and fees</h3>
+          <p class="project-meta">Deliveroo, 2021 to now</p>
+          <p>Changing a fee took days of careful manual work, and pricing needed to scale across every step of an order. I built internal tools that cut configuration to minutes, helped design the core service behind fees, benefits and pricing, and now support its move to the shared Wolt, DoorDash and Deliveroo platform.</p>
+          <p class="project-meta">Go, gRPC, GraphQL, AWS, Terraform</p>
         </div>
+      </article>
 
-        <div class="project-card">
-          <img class="project-thumb" src="assets/project/hmcts.png" alt="HMCTS Architecture" loading="lazy">
-          <h3>HMCTS Reform — Document &amp; Evidence Management</h3>
-          <p class="project-field-label">Problem</p>
-          <p class="project-field-value">Courts &amp; Tribunals digital services needed shared, reusable components for handling case documents and evidence.</p>
-          <p class="project-field-label">What I built</p>
-          <p class="project-field-value">As a junior engineer on the Reform programme, I built common components for the platform and acted as Scrum Master. <br><a href="https://github.com/search?q=org%3Ahmcts+author%3Aalectronic0&amp;type=pullrequests" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline; display: inline-block; margin-top: 4px;">View my 30+ open-source PRs for HMCTS on GitHub</a></p>
-          <p class="project-field-label">Tech used</p>
-          <div class="tags">
-            <span class="tag">Java 8</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">Postgres</span>
-            <span class="tag">Liquibase</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Terraform</span>
-            <span class="tag">Jenkins</span>
-          </div>
-          <span class="project-impact">HMCTS via Solirius · 2017–2018</span>
+      <article class="project-row">
+        <div class="before-after">
+          <figure>
+            <img src="assets/project/old-propty-details-page-web.jpg" alt="The legacy Rightmove property details page" width="1280" height="646" loading="lazy">
+            <figcaption>Before: legacy page</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/project/new-propty-details-page-web.jpg" alt="The replatformed Rightmove property details page" width="1280" height="647" loading="lazy">
+            <figcaption>After: live by December 2020</figcaption>
+          </figure>
         </div>
-
-        <div class="project-card">
-          <h3>HMPPS — Strategic Partner Gateway</h3>
-          <p class="project-field-label">Problem</p>
-          <p class="project-field-value">Her Majesty's Prison and Probation Service needed a secure, reliable gateway for partner data exchange.</p>
-          <p class="project-field-label">What I built</p>
-          <p class="project-field-value">Built the Strategic Partner Gateway (SPG) leveraging Java and ServiceMix on AWS. Set up comprehensive monitoring with the ELK stack and infrastructure automation via Ansible.</p>
-          <p class="project-field-label">Tech used</p>
-          <div class="tags">
-            <span class="tag">Java 8</span>
-            <span class="tag">ServiceMix</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Elasticsearch</span>
-            <span class="tag">ELK</span>
-            <span class="tag">Ansible</span>
-          </div>
-          <span class="project-impact">HMPPS via Solirius · 2016–2017</span>
+        <div>
+          <h3>Property Details page</h3>
+          <p class="project-meta">Rightmove, Evaluate team, 2020 to 2021</p>
+          <p>The page people read before booking a viewing lived in an ageing legacy codebase. With the Evaluate team I built its replacement, front end and API, using Spring Boot, React and GraphQL.</p>
+          <p class="project-meta">Java, Spring Boot, Kafka, React, GraphQL</p>
         </div>
+      </article>
 
-        <div class="project-card github">
-          <h3><span aria-hidden="true">🐙</span> More on GitHub</h3>
-          <p class="project-field-value">Check out my personal and open-source projects, experiments, and code samples.</p>
-          <a class="btn btn-secondary" href="https://github.com/alectronic0" target="_blank" rel="noopener">
-            github.com/alectronic0
-          </a>
+      <article class="project-row">
+        <div class="before-after shots shots-stacked">
+          <figure>
+            <img src="assets/project/rightmove-sold-before.webp" alt="The legacy Rightmove house prices search page" width="985" height="552" loading="lazy">
+            <figcaption>Before: legacy page</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/project/rightmove-sold-after.webp" alt="The replatformed Rightmove house prices page with a map and filters" width="985" height="552" loading="lazy">
+            <figcaption>After: live by April 2020</figcaption>
+          </figure>
         </div>
+        <div>
+          <h3>Sold Property pages</h3>
+          <p class="project-meta">Rightmove, Vendor team, 2019 to 2020</p>
+          <p>Sold prices lived in the same legacy codebase. I worked on the web, API and search services that replaced it, using Spring Boot and React: refactoring, load testing, UI work and the Elasticsearch upgrades behind sold property search.</p>
+          <p class="project-meta">Java, Spring Boot, Elasticsearch, React</p>
+        </div>
+      </article>
 
-      </div>
-    </div>
-  </section>
-`,
-  'volunteering': `
-<section id="volunteering">
-    <div class="container">
-      <div class="eyebrow">🤝 Volunteering</div>
-      <h2 class="section-title">Giving back</h2>
-      <div class="title-underline" aria-hidden="true"></div>
+      <article class="project-row">
+        <img class="project-thumb" src="assets/project/rightmove-valuation-panel.webp" alt="Two versions of the Rightmove request agent valuation panel" width="640" height="392" loading="lazy">
+        <div>
+          <h3>Agent valuation panel</h3>
+          <p class="project-meta">Rightmove, Vendor team</p>
+          <p>I worked on the panel that invites homeowners to ask local estate agents for a free valuation, shown alongside sold prices.</p>
+        </div>
+      </article>
 
-      <ol class="timeline">
+      <article class="project-row">
+        <img class="project-thumb" src="assets/project/hmcts.webp" alt="HMCTS document and evidence management architecture diagram" width="900" height="505" loading="lazy">
+        <div>
+          <h3>HMCTS Reform, document and evidence management</h3>
+          <p class="project-meta">HMCTS via Solirius, 2017 to 2018</p>
+          <p>Courts and tribunals services needed shared components for handling case documents and evidence. I helped build common components for the platform and acted as Scrum Master, in the open. <a href="${HMCTS_PRS}" target="_blank" rel="noopener noreferrer">See 176 merged PRs on GitHub</a>.</p>
+          <p class="project-meta">Java 8, Spring Boot, Postgres, Liquibase, Docker, Terraform, Jenkins</p>
+        </div>
+      </article>
 
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/likegoblins.jpg" alt="Goblins logo" loading="lazy">
-                <span class="timeline-company">Goblins</span>
-              </div>
-              <span class="timeline-dates">May 2025 – Present</span>
-            </div>
-            <div class="timeline-role">Community Volunteer</div>
-          </div>
-        </li>
+      <article class="project-row project-row-text">
+        <div>
+          <h3>HMPPS Strategic Partner Gateway</h3>
+          <p class="project-meta">HMPPS via Solirius, 2016 to 2017</p>
+          <p>A secure gateway for partner data exchange, built with Java and ServiceMix on AWS, with ELK monitoring and Ansible automation.</p>
+          <p class="project-meta">Java 8, ServiceMix, AWS, ELK, Ansible</p>
+        </div>
+      </article>
 
-        <li class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <div class="timeline-company-wrap">
-                <img class="timeline-logo" src="assets/logo/good-for-nothing.jpg" alt="Good for Nothing logo" loading="lazy">
-                <span class="timeline-company">Good for Nothing</span>
-              </div>
-              <span class="timeline-dates">Mar 2014 – Dec 2014</span>
-            </div>
-            <div class="timeline-role">Project Manager · Business &amp; Technical Consultant</div>
-            <ul class="timeline-bullets">
-              <li>Ran hackathon-style social-enterprise projects, providing technical consulting and branding for cause-led founders</li>
-            </ul>
-          </div>
-        </li>
-
-      </ol>
+      <p class="project-more">Personal projects and experiments are on <a href="https://github.com/alectronic0" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
     </div>
   </section>
 `,
   'next': `
 <section id="next">
     <div class="container">
-      <div class="eyebrow">🚀 Next Steps</div>
-      <h2 class="section-title">What I'm looking for next</h2>
-      <div class="title-underline" aria-hidden="true"></div>
-      
-      <div class="about-card" style="margin-bottom: 24px;">
-        <h3>The Mission</h3>
-        <p>I want to get involved in consumer-focused technology that makes everyday people's lives better. Whether it's helping people buy houses (Rightmove), get food delivered (Deliveroo), or navigate the public sector (HMCTS), impact matters to me.</p>
-        <p>Areas I'd love to try next: <strong>smart home &amp; hardware</strong>, <strong>consumer or geo-based data</strong> (like rendering data onto maps to improve lives), and <strong>health tech</strong> to help people make better choices and understand their own data.</p>
-        <p><em>Hard no:</em> Insurtech, Big Banks, Big Oil, or Gambling.</p>
-      </div>
+      <h2 class="section-title">What I want next</h2>
+      <p>I want to work on consumer technology that makes everyday life better. Helping people buy a home at Rightmove, get dinner from Deliveroo and deal with the courts through HMCTS all mattered to me for that reason.</p>
+      <p>I'd love to try smart home and hardware, consumer or geo-based data such as putting useful data on maps, and health tech that helps people understand their own data.</p>
+      <p>I work best fully remote, without weekly office days or a two or three day pattern. I'm happy to visit occasionally or on request, and stay over if a hotel is included. I'd prefer a permanent role, and I'd consider contract work for the right project. Flexibility matters to me in both directions: I'll be there for the team outside normal hours when it counts.</p>
 
-      <div class="about-card" style="margin-bottom: 24px;">
-        <h3>The Setup &amp; Benefits</h3>
-        <p>I work best in a <strong>Remote-first environment</strong> (no hybrid or mandated office days). If you are London-based, I'm happy to visit once a month and stay long if hotel accommodation is included — I just don't want to go back to 7am–9pm commutes.</p>
-        <p>Flexible working is crucial. It allows me to support my team to the best of my ability. I am not a 'quit at 5pm' person; I'm happy to be available to support the team beyond standard hours when needed, but that requires true two-way flexibility.</p>
-        <p>Must-haves: competitive holiday &amp; bonus, health insurance, and a dedicated fund for training or AI software subscriptions (e.g. Claude Code, which isn't cheap!). I actively use Antigravity, Gemini, and Claude Code for my daily work.</p>
-        <p><strong>Compensation expectations:</strong> I am targeting a base salary of <strong>£125,000</strong>. My current compensation package includes a recent equity grant of <strong>~£110k GBP in RSUs</strong>. I am looking for roles that offer a competitive overall package in line with this.</p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-card" style="grid-column: span 2;">
-          <h3><span aria-hidden="true">🎯</span> Target Companies</h3>
-          <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted)">The kind of places I'd love to work (just to get the vibe):</p>
-          <div class="tags">
-            <span class="tag"><img src="assets/logo/target-companies/monzo.svg" alt="" width="16" height="16">Monzo</span>
-            <span class="tag"><img src="assets/logo/target-companies/octopusenergy.jpg" alt="" width="16" height="16" style="border-radius: 50%">Octopus Energy</span>
-            <span class="tag"><img src="assets/logo/target-companies/googlemaps.svg" alt="" width="16" height="16">Google Maps</span>
-            <span class="tag"><img src="assets/logo/target-companies/bumble.jpg" alt="" width="16" height="16" style="border-radius: 50%">Bumble</span>
-            <span class="tag"><img src="assets/logo/target-companies/life360.jpg" alt="" width="16" height="16" style="border-radius: 50%">Life 360</span>
-            <span class="tag"><img src="assets/logo/target-companies/bookingcom.svg" alt="" width="16" height="16">Booking.com</span>
-            <span class="tag"><img src="assets/logo/target-companies/skyscanner.jpg" alt="" width="16" height="16" style="border-radius: 50%">Skyscanner</span>
-            <span class="tag"><img src="assets/logo/target-companies/opentable.jpg" alt="" width="16" height="16" style="border-radius: 50%">OpenTable</span>
-            <span class="tag"><img src="assets/logo/target-companies/citymapper.jpg" alt="" width="16" height="16" style="border-radius: 50%">Citymapper</span>
-            <span class="tag"><img src="assets/logo/target-companies/strava.svg" alt="" width="16" height="16">Strava</span>
-            <span class="tag"><img src="assets/logo/target-companies/lego.jpg" alt="" width="16" height="16" style="border-radius: 50%">Lego</span>
-            <span class="tag"><img src="assets/logo/target-companies/nintendo.jpg" alt="" width="16" height="16" style="border-radius: 50%">Nintendo</span>
-            <span class="tag"><img src="assets/logo/target-companies/crunchyroll.svg" alt="" width="16" height="16">Crunchyroll</span>
-            <span class="tag">Health Tech</span>
-          </div>
+      <dl class="skill-rows">
+        <div>
+          <dt>Companies I admire</dt>
+          <dd>Monzo, Octopus Energy, Google Maps, Bumble, Life360, Booking.com, Skyscanner, OpenTable, Citymapper, Strava, Lego, Nintendo, Crunchyroll</dd>
         </div>
+        <div><dt>Tech I want to use more</dt><dd>Android, Kotlin, Bun, Deno, TypeScript, Cloudflare, AWS, alongside Go</dd></div>
+      </dl>
 
-        <div class="skill-card" style="grid-column: span 2;">
-          <h3><span aria-hidden="true">💡</span> Tech I'm interested in</h3>
-          <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted)">I still love Go, but want to do more with:</p>
-          <div class="tags">
-            <span class="tag">Android Mobile</span>
-            <span class="tag">Kotlin</span>
-            <span class="tag">Bun</span>
-            <span class="tag">Deno</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Cloudflare</span>
-            <span class="tag">AWS</span>
-          </div>
-        </div>
-      </div>
+      <a class="btn btn-secondary" href="#pay">See pay and availability</a>
     </div>
   </section>
 `,
   'contact': `
 <section id="contact">
     <div class="container">
-      <div class="eyebrow">📬 Contact</div>
-      <h2 class="section-title">Let's talk</h2>
-      <div class="title-underline" aria-hidden="true"></div>
-      <div class="contact-box">
-        <p>I'm open to hearing about new opportunities. The quickest way to reach me is by email — I'll get back to you as soon as I can.</p>
-        <a class="btn btn-primary btn-large" href="mailto:alec@alectronic.co">✉️ alec@alectronic.co</a>
-        <div class="contact-links">
-          <a href="https://github.com/alectronic0" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/alectronic0" target="_blank" rel="noopener">LinkedIn ↗</a>
-        </div>
-      </div>
+      <h2 class="section-title">Contact</h2>
+      <p>Email is the quickest way to reach me.</p>
+      <a class="contact-email" href="mailto:alec@alectronic.co">alec@alectronic.co</a>
+      <p class="contact-links">
+        <a href="https://github.com/alectronic0" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/alectronic0" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
     </div>
   </section>
 `,
   'footer': `
 <footer id="footer">
   <div class="container">
-    <p>&copy; <span class="year"></span> Alec &middot; hire.alec.today &middot; All rights reserved. &middot; <a href="mailto:alec@alectronic.co">alec@alectronic.co</a></p>
-    <p style="margin-top: 8px; font-size: 0.85em; opacity: 0.8;">Powered by <a href="https://alec.today/" target="_blank" rel="noopener" style="text-decoration: underline; color: inherit;">Alec Doran-Twyford (Alectronic&trade;)</a></p>
+    <p>&copy; <span class="year"></span> Alec Doran-Twyford. <a href="https://alec.today/" target="_blank" rel="noopener noreferrer">alec.today</a></p>
   </div>
 </footer>
 `,
+  'compensation': {
+    updated: '31 October 2026',
+    intro: 'Figures first, so nobody loses time. Rounded, and all gross per year.',
+    target_rows: [
+      ['Base salary', '£130k to £140k'],
+      ['Total package', '£160k or more']
+    ],
+    current_rows: [
+      ['Base salary', '£106k'],
+      ['Annual cash bonus', 'None'],
+      ['Employer pension', '5%'],
+      ['Total for 2026/27', 'About £157k']
+    ],
+    current_note: 'The total is my employer\'s compensation statement for April 2026 to March 2027: base, equity and a one-off payment. It excludes pension. The bonus scheme ended in April 2026.',
+    equity_line: 'A move also needs to account for unvested equity I\'d leave behind.',
+    benefits: ['5% employer pension', 'Private medical insurance', 'Life assurance at 6 times salary'],
+    must_haves: ['Fully remote, with occasional visits on request', 'Real two-way flexibility', 'Competitive holiday and health insurance', 'A budget for training and AI tools'],
+    hard_nos: ['Insurtech', 'Big banks', 'Big oil', 'Gambling'],
+    availability: 'Notice is 5 weeks, rising to 6 on 15 March 2027.',
+    chart_summary: 'Base salary rose from £25k in 2016 to £106k in 2026. The target is £130k to £140k, inside the £115k to £150k range of a public UK Staff Engineer posting.',
+    chart_note: 'Starting salaries at Solirius and Rightmove, then every change at Deliveroo. The shaded band is',
+    chart_now: 2026.83,
+    market: { year: 2025.5, low: 115, high: 150, text: 'one public UK Staff Engineer posting, £115k to £150k', url: 'https://builtinlondon.uk/job/staff-software-engineer-quality-product-integrity/8480632' },
+    target: { year: 2027.2, low: 130, high: 140, text: '£130k to £140k' },
+    employers: [
+      { name: 'Solirius', year: 2016.72 },
+      { name: 'Rightmove', year: 2018.9 },
+      { name: 'Deliveroo', year: 2021.2 }
+    ],
+    history: [
+      { year: 2016.72, value: 25, label: 'Sep 2016', employer: 'Solirius', direct_label: true },
+      { year: 2018.9, value: 50, label: 'Nov 2018', employer: 'Rightmove', direct_label: true },
+      { year: 2021.2, value: 62, label: 'Mar 2021', employer: 'Deliveroo', direct_label: true },
+      { year: 2022.25, value: 86, label: 'Apr 2022', employer: 'Deliveroo', direct_label: true },
+      { year: 2023.25, value: 99, label: 'Apr 2023', employer: 'Deliveroo', direct_label: false },
+      { year: 2024.25, value: 100, label: 'Apr 2024', employer: 'Deliveroo', direct_label: false },
+      { year: 2025.25, value: 103, label: 'Apr 2025', employer: 'Deliveroo', direct_label: false },
+      { year: 2026.25, value: 106, label: 'Apr 2026', employer: 'Deliveroo', direct_label: true }
+    ]
+  },
   'not_found': `
   <section class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh;">
     <div class="card-404">
@@ -721,6 +522,7 @@ window.CONTENT.structured_data = `
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "url": "https://hire.alec.today/",
+    "dateModified": "2026-10-31",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://alec.today/#person",
@@ -728,12 +530,7 @@ window.CONTENT.structured_data = `
       "givenName": "Alec",
       "familyName": "Doran-Twyford",
       "alternateName": ["Alectronic", "alectronic0"],
-      "gender": "Male",
       "jobTitle": "Senior Software Engineer",
-      "birthPlace": {
-        "@type": "Place",
-        "name": "London, United Kingdom"
-      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Welwyn Garden City",
@@ -747,19 +544,10 @@ window.CONTENT.structured_data = `
           "alternateName": "en"
         }
       ],
-      "skills": [
-        "Go", "Java", "Ruby", "TypeScript", "React",
-        "gRPC", "Kafka", "Postgres", "Redis", "AWS",
-        "Docker", "Terraform", "Distributed Systems",
-        "Microservices", "Backend Engineering", "Full Stack Engineering"
-      ],
       "description": "Senior Software Engineer at Deliveroo, based in Welwyn Garden City. Previously at Rightmove, Solirius, HMPPS and Sky.",
       "url": "https://hire.alec.today/",
-      "image": "https://date.alec.today/img/alec/alec-portrait-terracotta-wall.webp",
-      "email": [
-        "alec@alectronic.co",
-        "date@alec.today"
-      ],
+      "image": "https://hire.alec.today/assets/avatar.webp",
+      "email": "alec@alectronic.co",
       "nationality": [
         { "@type": "Country", "name": "United Kingdom" },
         { "@type": "Country", "name": "New Zealand" }
@@ -783,7 +571,9 @@ window.CONTENT.structured_data = `
         { "@type": "Organization", "name": "Solirius Consulting" },
         { "@type": "Organization", "name": "Sky", "sameAs": "https://en.wikipedia.org/wiki/Sky_Group" },
         { "@type": "Organization", "name": "GLEAT" },
-        { "@type": "Organization", "name": "Welcome Break Waitrose" }
+        { "@type": "Organization", "name": "Welcome Break Waitrose" },
+        { "@type": "Organization", "name": "IVSTEL" },
+        { "@type": "EducationalOrganization", "name": "Oaklands College" }
       ],
       "knowsAbout": [
         "Software Engineering", "Backend Development", "Full Stack Engineering",
@@ -804,7 +594,7 @@ window.CONTENT.structured_data = `
         },
         {
           "@type": "EducationalOccupationalCredential",
-          "name": "Certified Scrum Master",
+          "name": "Certified ScrumMaster (2020 to 2022)",
           "credentialCategory": "certification"
         }
       ],
@@ -818,7 +608,6 @@ window.CONTENT.structured_data = `
         "https://www.instagram.com/alectronic0/",
         "https://www.tiktok.com/@alectronic0",
         "https://www.pinterest.com/alectronic0/",
-        "https://linktr.ee/Alectronic",
         "https://t.me/alectronic0"
       ]
     }

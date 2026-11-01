@@ -14,6 +14,8 @@ HTML pages simply import `cookie.js` and `style.css` to enable full consent mana
 
 ## JS-Injected Layout Rules
 - **Header & Footer**: Automatically prepended and appended to the `<body>` by `js/app.js`, so you don't need to manually duplicate them across HTML pages.
+- **Prerendered Snapshot**: CI runs `scripts/prerender.js`, so the deployed `index.html` already contains the layout, sections and schema. `app.js` checks for each one before inserting it, so nothing renders twice. Interactive setup always runs.
+- **Pay Dialog**: `compensation` in `js/content.js` is data, not HTML. `app.js` builds the dialog on first open, which keeps pay figures out of the prerendered HTML and search snippets. They are still public in `content.js`. Update `updated` whenever the figures change.
 - **Dynamic Content Loading**: The `<main>` container uses `data-page` (`home`, `404`, etc.). `app.js` checks this attribute to determine what to render (e.g. iterating over all sections for the homepage, or running random GIF logic for the 404 page).
 
 ## Site-Specific Quirks

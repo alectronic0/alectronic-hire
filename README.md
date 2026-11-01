@@ -3,7 +3,7 @@
 Official software engineering portfolio, project architecture highlights, and experience showcase for Alec Doran-Twyford (@Alectronic).
 
 ## Tech Stack
-- Vanilla HTML, CSS (`css/styles.css`), JavaScript (`js/content.js`, `js/main.js`).
+- Vanilla HTML, CSS (`css/style.css`), JavaScript (`js/content.js`, `js/app.js`).
 - GitHub Pages + Automated Minification & Search Console CI pipeline.
 
 ## Live Domain
