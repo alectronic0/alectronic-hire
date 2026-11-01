@@ -332,7 +332,7 @@ window.CONTENT = {
       <article class="project-row">
         <div class="before-after shots shots-stacked">
           <figure>
-            <img src="assets/project/rightmove-sold-before.webp" alt="The legacy Rightmove house prices search page" width="985" height="552" loading="lazy">
+            <img src="assets/project/rightmove-sold-legacy.webp" alt="The legacy Rightmove house prices search page" width="1000" height="378" loading="lazy">
             <figcaption>Before: legacy page</figcaption>
           </figure>
           <figure>

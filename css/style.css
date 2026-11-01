@@ -483,10 +483,9 @@ main > section.hero { padding-block: clamp(32px, 5vw, 72px) clamp(28px, 3.5vw, 4
 
 .before-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .before-after figure { margin: 0; }
-.before-after img { aspect-ratio: 4 / 3; object-fit: cover; object-position: top; }
+.before-after:not(.shots) img { aspect-ratio: 4 / 3; object-fit: cover; object-position: top; }
 .before-after figcaption { color: var(--text-muted); font-size: 0.8125em; margin-top: 4px; }
 .shots { align-items: start; }
-.shots img { aspect-ratio: auto; object-fit: fill; }
 .shots-stacked { grid-template-columns: minmax(0, 1fr); }
 .project-thumb, .before-after img { cursor: zoom-in; }
 
